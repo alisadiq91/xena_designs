@@ -5,20 +5,45 @@ html {
 body {
     /* This is a single-line comment background: url('/media/home.png') no-repeat center center fixed; */
     background-size: cover;
+    background-color: silver;
     height: calc(100vh - 164px);
-    color: #fff;
+    color: white;
     font-family: 'Spartan', sans-serif;
 }
 
 .border-md-right {
-    border-right: 1px solid silver;
+    border-right: 1px solid white;
   }
 
 .title {
-    border-bottom: 3px solid silver;
+    border-bottom: 3px solid white;    
+}
+
+.title-colour {
+    color: inherit;
+    font-size: 30px;
+}
+
+.title-colour:hover {
+    color: grey;
+    text-decoration: none;
 }
 
 .bord-top {
-    border-top: 3px solid silver;
+    border-top: 3px solid white;
     padding-top: 30px;
 }
+
+.carousel-text {
+    color: black;
+}
+
+
+.shop-now-button:hover {
+    color: grey;
+}
+
+.carousel-img {
+    width: 100%;
+}
+
