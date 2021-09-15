@@ -15,9 +15,7 @@ body {
     border-right: 1px solid white;
   }
 
-.title {
-    border-bottom: 3px solid white;    
-}
+
 
 .title-colour {
     color: inherit;
@@ -29,13 +27,23 @@ body {
     text-decoration: none;
 }
 
-.bord-top {
-    border-top: 3px solid white;
+.navbar {
+    border-top: solid 3px white;
+    border-bottom: solid 3px white;
+}
+
+.pad-top {
     padding-top: 30px;
 }
 
+.free-accessory {
+    border-bottom: solid 3px white;
+
+}
+
 .carousel-text {
-    color: black;
+    color: silver;
+    background: black;
 }
 
 

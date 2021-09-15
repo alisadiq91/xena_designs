@@ -57,7 +57,7 @@
             </li>
             <li class="nav-item dropdown border-md-right">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Products
+                Shop
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="">Home furnishings</a>
@@ -96,8 +96,17 @@
             <input class="form-control mr-sm-2" type="search" placeholder="Search for a product..." aria-label="Search">
             <button class="btn btn-light btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
           </form>
+          <span><i class="fas fa-shopping-cart mx-2"></i>Basket</span>
+          
         </div>
       </nav>
+      <div class="free-accessory">
+        <div class="row">
+          <div class="col bg-dark pt-2 text-center">
+            <h4>FREE ACCESSORY WHEN YOU SPEND OVER £{{ free_accessory_threshold }}!</h4>
+          </div>
+        </div>
+      </div>
     {% if messages %}
         <div class="message-container"></div>
     {% endif %}
