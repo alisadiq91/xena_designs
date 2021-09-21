@@ -5,9 +5,9 @@ html {
 body {
     /* This is a single-line comment background: url('/media/home.png') no-repeat center center fixed; */
     background-size: cover;
-    background-color: silver;
+    background-color: white;
     height: calc(100vh - 164px);
-    color: white;
+    color: black;
     font-family: 'Spartan', sans-serif;
 }
 
@@ -30,7 +30,13 @@ body {
 .navbar {
     border-top: solid 3px white;
     border-bottom: solid 3px white;
+    color: black;
 }
+
+.navbar-light .navbar-nav .nav-link {
+    color: black;
+}
+
 
 .pad-top {
     padding-top: 30px;
@@ -39,6 +45,10 @@ body {
 .free-accessory {
     border-bottom: solid 3px white;
 
+}
+
+.text-white {
+    color: white;
 }
 
 .carousel-text {
