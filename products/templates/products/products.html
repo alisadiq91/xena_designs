@@ -13,9 +13,23 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col text-center mt-3">
-            <h2 class="logo-font">Products</h2>
+            {% if 'category' in request.GET %}
+                {% for c in current_categories %}
+                    <h2>{{ c.friendly_name }}</h2>
+                {% endfor %}  
+            {% else %}  
+            <h2>Products</h2>
+            {% endif %}
             <hr class="w-50 mb-1">
+            
         </div>
+    </div>
+    
+      
+    
+    <div class="border-0">
+        <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price (Low to High)</a>
+        <a href="{% url 'products' %}?sort=price&direction=desc" class="dropdown-item">By Price (High to Low)</a>
     </div>
     <div class="row">
         <div class="product-container col-10 offset-1">
@@ -37,6 +51,13 @@
                                 <div class="card-body pb-0">
                                     <p class="mb-0">{{ product.name }}</p>
                                 </div>
+                                {% if product.category %}
+                                <p class="small mt-1 mb-0">
+                                    <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
+                                        <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
+                                    </a>
+                                </p>
+                                {% endif %}
                                 <div class="card-footer bg-white pt-0 border-0 text-left">
                                     <div class="row">
                                         <div class="col">
