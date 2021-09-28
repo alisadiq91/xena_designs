@@ -51,6 +51,10 @@ body {
     color: white;
 }
 
+.text-black {
+    color: black; !important
+}
+
 .carousel-text {
     color: silver;
     background: black;
