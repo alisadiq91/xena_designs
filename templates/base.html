@@ -84,7 +84,7 @@
                 </li>
                 {% if request.user.is_superuser %}
                     <li class="nav-item border-md-right">
-                      <a class="nav-link" href="#"><i class="fas fa-edit"></i>Product Management</a>
+                      <a class="nav-link" href="{% url 'add_product' %}"><i class="fas fa-edit"></i>Product Management</a>
                     </li>
                 {% endif %}
             {% else %}
