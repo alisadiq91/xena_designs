@@ -1,1 +1,1 @@
-web: gunicorn xena-designs.wsgi:application
+web: gunicorn xena_designs.wsgi:application
