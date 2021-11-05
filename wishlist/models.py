@@ -5,7 +5,7 @@ from products.models import Product
 
 class WishList(models.Model):
     """
-    Model to show all product items within the users wishlist
+    A model to show all items in the users wishlist.
     """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     products = models.ManyToManyField(Product,
@@ -18,8 +18,7 @@ class WishList(models.Model):
 
 class WishListItem(models.Model):
     """
-    A 'through' model, allowing users to add
-    individual products to their wishlist.
+    A model to allow users to add products to their wishlist
     """
 
     product = models.ForeignKey(Product,

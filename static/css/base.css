@@ -94,6 +94,11 @@ body {
     overflow-x: hidden;
 }
 
+.product-img {
+    height: 350px;
+    width: 350px;
+}
+
 /* Allauth form formatting */
 
 .allauth-form-inner-content p {
