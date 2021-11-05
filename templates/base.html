@@ -80,16 +80,16 @@
                   <a class="nav-link" href="{% url 'profile' %}"><i class="fas fa-user mx-2"></i>My Profile</a>
                 </li>
                 <li class="nav-item border-md-right">
-                  <a class="nav-link" href="{% url 'wishlist' %}"><i class="fas fa-list mx-2"></i>My Wishlist</a>
-                </li>
-                <li class="nav-item border-md-right">
-                  <a class="nav-link" href="{% url 'account_logout' %}"><i class="fas fa-sign-out-alt mx-2"></i>Logout</a>
+                  <a class="nav-link" href="{% url 'wishlist' %}"><i class="fas fa-heart mx-2"></i>My Wishlist</a>
                 </li>
                 {% if request.user.is_superuser %}
                     <li class="nav-item border-md-right">
                       <a class="nav-link" href="{% url 'add_product' %}"><i class="fas fa-edit mx-2"></i>Product Management</a>
                     </li>
                 {% endif %}
+                <li class="nav-item border-md-right">
+                  <a class="nav-link" href="{% url 'account_logout' %}"><i class="fas fa-sign-out-alt mx-2"></i>Logout</a>
+                </li>
             {% else %}
               <li class="nav-item border-md-right">
                 <a class="nav-link" href="{% url 'account_signup' %}"><i class="fas fa-user-plus mx-2"></i>Register</a>
@@ -103,30 +103,34 @@
               
               
           </ul>
-          <form method="GET" action="{% url 'products' %}" class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search for a product..." aria-label="Search" name='q'>
-            <button class="btn btn-light btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
-          </form>
-          <span><a class="{% if grand_total %} font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_basket' %}"> <i class="fas fa-shopping-cart ml-4"></i>
+          <a class="{% if grand_total %} font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_basket' %}"> <i class="fas fa-shopping-cart ml-4"></i>
             <div class="text-center">
               <p class="my-0">
-                  {% if grand_total %}
+                  {% if product_count > 0 %}
                       £{{ total|floatformat:2 }}
                   {% else %}
-                      £0.00
+                       Basket
                   {% endif %}
               </p>
           </div>
-          </a></span>
+          </a>
           
         </div>
       </nav>
-      <div class="free-accessory">
+      <div class="free-delivery">
         <div class="row">
           <div class="col bg-dark pt-2 text-center">
             <h4 class="text-white">FREE DELIVERY WHEN YOU SPEND OVER £{{ free_delivery_threshold }}!</h4>
           </div>
         </div>
+      </div>
+      <div class="container-fluid mt-2">
+          <div class="search-bar justify-content-center">
+              <form method="GET" action="{% url 'products' %}" class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search for a product..." aria-label="Search" name='q'>
+                <button class="btn btn-light btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
+              </form>
+          </div>
       </div>
       
     {% if messages %}
@@ -144,7 +148,7 @@
               {% endif %}
           {% endwith %}
       {% endfor %}
-  </div>
+    </div>
     {% endif %}
 
     {% block page_header %}

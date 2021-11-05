@@ -34,7 +34,14 @@ body {
 }
 
 .navbar-light .navbar-nav .nav-link {
-    color: black;
+    color: inherit;
+    text-decoration: none;
+
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 
@@ -42,7 +49,7 @@ body {
     padding-top: 30px;
 }
 
-.free-accessory {
+.free-delivery {
     border-bottom: solid 3px white;
 
 }

@@ -102,14 +102,15 @@
                         </div>
                     </form>
                     {% if request.user.is_authenticated %}
-                    <form class="form" action="{% url 'add_to_wishlist' product.id %}" method="POST">
-                        {% csrf_token %}
-                        <div class="form-row">
-                                <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Wishlist">
+                        {% if product in product.product_wishlists.all %}                 
+                            <div>
+                                <a class="btn-success" href="{% url 'remove_from_wishlist' product.id %}">Remove from Wishlist</a>                            
                             </div>
-                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                        </div>
-                    </form>  
+                        {% else %}
+                            <div>
+                                <a class="btn-success" href="{% url 'add_to_wishlist' product.id %}">Add to Wishlist</a>                                
+                            </div>
+                        {% endif %}
                     {% else %} 
                         <a class="btn btn-black rounded-0 text-uppercase mt-5" href="{% url 'account_login' %}">Add to Wishlist</a>
                     {% endif %}

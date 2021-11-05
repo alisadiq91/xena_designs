@@ -5,6 +5,7 @@ from django.db.models import Q
 
 from .models import Product, Category
 from .forms import ProductForm
+from wishlist.models import WishList
 
 
 # Create your views here.
@@ -134,3 +135,17 @@ def delete_product(request, product_id):
     product.delete()
     messages.success(request, 'Product deleted!')
     return redirect(reverse('products'))
+
+
+def wishlists(request):
+    """ get wishlist"""
+
+    wishlist = get_object_or_404(WishList, user=request.user)
+
+    context = {
+            'wishlist': wishlist,
+        }
+    
+    print(wishlist)
+
+    return render(request, 'products/product_detail.html', context)

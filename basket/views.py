@@ -4,6 +4,7 @@ from products.models import Product
 
 # Create your views here.
 
+
 def view_basket(request):
     """ View to return basket contents page """
     return render(request, 'basket/basket.html')
