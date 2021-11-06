@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<!--Main Review Content-->
+<div id="reviews-container">
+<div class="overlay"></div>
+<div class="container">
+    <div class="row">
+        <div class="container">
+            <hr>
+            <h2 class="logo-font mb-4">Our Reviews</h2>
+            <hr>
+        </div>
+   </div>
+</div>
+</div>
+{% if request.user.is_authenticated %}
+<div class="container">
+    <div class="row">
+        <a href="{% url 'write_review' %}" class="btn btn-dark btn-lg btn-block">Add A Review</a>
+    </div>
+</div>
+{% endif %}
+{% for review in reviews %}
+<div>
+   <div class="container">
+      <div class="card">
+         <div class="card-content review-card-content">
+            <h4 class="card-title review-card-title">{{ review.title }}</h4>
+         </div>
+         <div class="card-action">
+            <p><strong> Review </strong><br>{{ review.comments }}</p>
+            <p><strong> Date </strong><br>{{ review.date_created }}</p>
+            <p><strong> By </strong><br>{{ review.creator }}</p>
+            <!--Edit/Delete Review Buttons-->
+            <div class="card-action">
+               {% if request.user.userprofile == review.creator %}
+               <a class="btn btn-dark" href="{% url 'edit_review' review.id %}"
+                  aria-label="Edit review from {{ review.creator }}">Edit</a>
+               <a class="btn btn-danger" href="{% url 'delete_review' review.id %}">Delete</a>
+               {% endif %}
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+{% endfor %}
+<!--Add Review CTA Card-->
+{% if request.user.is_authenticated %}
+<div>
+   <div class="container">
+      <div class="card">
+            <a href="{% url 'write_review' %}" class="btn btn-dark btn-lg btn-block">Create Review</a>
+      </div>
+   </div>
+</div>
+{% endif %}
+{% endblock %}
