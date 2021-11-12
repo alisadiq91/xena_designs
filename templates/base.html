@@ -45,11 +45,18 @@
     <title>Xena Designs {% block extra_title %}{% endblock %}</title>
   </head>
   <body>
-    
+    <div class="free-delivery border-bottom">
+      <div class="row">
+        <div class="col bg-black pt-2 text-center">
+          <h4 class="text-white small">FREE UK DELIVERY WHEN YOU SPEND OVER £{{ free_delivery_threshold }}!</h4>
+        </div>
+      </div>
+    </div>
     <div class="container-fluid">
       <div class="row">
-        <div class="col bg-black text-white pt-2">
-          <ul class="d-flex justify-content-end ">
+        <div class="col bg-black text-white pt-2 border-bottom">
+          <div class="float-left py-2 title"><a href="{% url 'home' %}"><img  src="/media/logo.png" width="70" height="70"></a></div>
+          <ul class="float-right pt-3">
            
           {% if request.user.is_authenticated %}
           
@@ -71,6 +78,9 @@
                     <li class="nav-item border-md-right list-inline-item ">
                       <a class="nav-link" href="{% url 'account_login' %}"><i class="fas fa-user mx-2"></i>Login</a>
                     </li>
+                    <li class="nav-item border-md-right list-inline-item">
+                      <a class="nav-link" href="{% url 'account_login' %}"><i class="far fa-registered mx-2"></i>Register</a>
+                    </li>
                     
       
                   {% endif %}
@@ -86,17 +96,16 @@
         </div>
       </div>
     </div>
-    <div class="free-delivery">
-      <div class="row">
-        <div class="col bg-black pt-2 text-center">
-          <h4 class="text-white small">FREE UK DELIVERY WHEN YOU SPEND OVER £{{ free_delivery_threshold }}!</h4>
-        </div>
+   
+    <div class="container-fluid py-2 border-bottom">
+      <div class="search-bar d-flex justify-content-center">
+          <form method="GET" action="{% url 'products' %}" class="form-inline">
+            <input class="search-width form-control mr-sm-2" type="search" placeholder="Search for a product..." aria-label="Search" name='q'>
+            <button class="btn btn-light btn-outline-dark" type="submit"><i class="fas fa-search"></i></button>
+          </form>
       </div>
-    </div>
-    
-      <div class="d-flex justify-content-center py-2 title border-top"><a href="{% url 'home' %}"><img  src="/media/logo.png" width="100" height="100"></a></div>
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-white border-top">
+  </div>
+    <nav class="d-flex justify-content-center navbar navbar-expand-lg navbar-light bg-black border-top">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -104,12 +113,26 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active border-md-right">
-              <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link text-white" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item dropdown border-md-right">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Shop
-              </a>
+            <li class="nav-item active border-md-right">
+              <a class="nav-link text-white" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active border-md-right">
+              <a class="nav-link text-white" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active border-md-right">
+              <a class="nav-link text-white" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active border-md-right">
+              <a class="nav-link text-white" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active border-md-right">
+              <a class="nav-link text-white" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active border-md-right">
+              <a class="nav-link text-white" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+            </li>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="{% url 'products' %}">All Products</a>
                 <div class="dropdown-divider"></div>
@@ -138,14 +161,7 @@
         </div>
       </nav>
       
-      <div class="container-fluid mt-2">
-          <div class="search-bar justify-content-center">
-              <form method="GET" action="{% url 'products' %}" class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search for a product..." aria-label="Search" name='q'>
-                <button class="btn btn-light btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
-              </form>
-          </div>
-      </div>
+      
       
     {% if messages %}
     <div class="message-container">

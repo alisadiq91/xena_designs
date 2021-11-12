@@ -7,8 +7,16 @@ body {
     background-size: cover;
     background-color: black;
     height: calc(100vh - 164px);
-    color: black;
+    color: white;
     font-family: 'Spartan', sans-serif;
+}
+
+.float-right {
+    float: right;
+}
+
+.float-left {
+    float: left;
 }
 
 .border-md-right {
@@ -28,9 +36,9 @@ body {
 }
 
 .navbar {
-    border-top: solid 3px white;
-    border-bottom: solid 3px white;
-    color: black;
+    border-top: solid 1px white;
+    border-bottom: solid 1px white;
+    color: white ;
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -53,15 +61,20 @@ a {
     background-color: black;
 }
 
+.bg-white {
+    background-color: white;
+}
+
 .text-middle {
     text-align: center !important; 
 }
-.free-delivery {
+.border-bottom {
     border-bottom: solid 1px white;
-    border-top: solid 1px white;
-
 }
 
+.form-inline .form-control {
+    width: 700px;
+}
 .text-white {
     color: white;
 }
