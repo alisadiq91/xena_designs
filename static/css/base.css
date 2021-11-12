@@ -36,8 +36,6 @@ body {
 }
 
 .navbar {
-    border-top: solid 1px white;
-    border-bottom: solid 1px white;
     color: white ;
 }
 
@@ -51,7 +49,6 @@ a {
     text-decoration: none;
     color: inherit;
 }
-
 
 .pad-top {
     padding-top: 30px;
