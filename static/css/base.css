@@ -5,7 +5,7 @@ html {
 body {
     /* This is a single-line comment background: url('/media/home.png') no-repeat center center fixed; */
     background-size: cover;
-    background-color: white;
+    background-color: black;
     height: calc(100vh - 164px);
     color: black;
     font-family: 'Spartan', sans-serif;
@@ -49,8 +49,16 @@ a {
     padding-top: 30px;
 }
 
+.bg-black {
+    background-color: black;
+}
+
+.text-middle {
+    text-align: center !important; 
+}
 .free-delivery {
-    border-bottom: solid 3px white;
+    border-bottom: solid 1px white;
+    border-top: solid 1px white;
 
 }
 
