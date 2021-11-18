@@ -86,12 +86,12 @@ a {
 }
 
 video {
-    width: 100vw;
+    width: 95vw;
 }
 
 .overlay-text{
     position:absolute;
-     top:30%;
+     top:40%;
      left:10%;
      z-index:1;
      background-color: rgba(255, 255, 255, 0.5);
