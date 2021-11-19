@@ -102,7 +102,7 @@
                         </div>
                     </form>
                     {% if request.user.is_authenticated %}
-                        {% if product in product.product_wishlists.all %}                 
+                        {% if product_in_wishlist %}                 
                             <div>
                                 <a class="btn-success" href="{% url 'remove_from_wishlist' product.id %}">Remove from Wishlist</a>                            
                             </div>

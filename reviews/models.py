@@ -13,7 +13,7 @@ class Review(models.Model):
     comments = models.TextField()
     creator = models.ForeignKey(
         UserProfile, on_delete=models.CASCADE, blank=True, null=True)
-    date_created = models.DateTimeField(default=timezone.now)
+    date_created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.title

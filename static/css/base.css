@@ -5,10 +5,12 @@ html {
 body {
     /* This is a single-line comment background: url('/media/home.png') no-repeat center center fixed; */
     background-size: cover;
-    background-color: black;
+    background-color: white;
     height: calc(100vh - 164px);
-    color: white;
-    font-family: 'Spartan', sans-serif;
+    color: black;
+    font-family: 'El Messiri', sans-serif;
+    font-size: large;
+    font-weight: bold;
 }
 
 .float-right {
@@ -19,12 +21,17 @@ body {
     float: left;
 }
 
-.border-md-right {
-    border-right: 1px solid white;
+.border-md-right:hover {
+    border-bottom: solid 3px black;
   }
 
 
+.title {
+    
+    font-weight: bold;
+    font-size: 50px;
 
+}
 .title-colour {
     color: inherit;
     font-size: 30px;
@@ -35,8 +42,14 @@ body {
     text-decoration: none;
 }
 
+.free-delivery{
+    color: white;
+    background-color: black;
+    font-size: large;
+}
 .navbar {
-    color: white ;
+    color: black ;
+    font-weight: bold;
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -54,9 +67,6 @@ a {
     padding-top: 30px;
 }
 
-.bg-black {
-    background-color: black;
-}
 
 .bg-white {
     background-color: white;
@@ -66,15 +76,13 @@ a {
     text-align: center !important; 
 }
 .border-bottom {
-    border-bottom: solid 1px white;
+    border-bottom: solid 1px black;
 }
 
 .form-inline .form-control {
     width: 700px;
 }
-.text-white {
-    color: white;
-}
+
 
 .text-black {
     color: black; !important
@@ -98,7 +106,7 @@ video {
    }
    
 #topText {
-     color: white;
+     color: black;
      font-size: 20px;
      align-self: center;
    }

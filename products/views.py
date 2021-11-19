@@ -62,9 +62,14 @@ def product_detail(request, product_id):
     """ A view to show all products, sort products and search through them """
 
     product = get_object_or_404(Product, pk=product_id)
+    if request.user.is_authenticated:
+        product_in_wishlist = request.user.wishlist.products.filter(pk=product_id).count() > 0
+    else:
+        product_in_wishlist = False
 
     context = {
         'product': product,
+        'product_in_wishlist': product_in_wishlist,
     }
     return render(request, 'products/product_detail.html', context)
 
@@ -135,17 +140,3 @@ def delete_product(request, product_id):
     product.delete()
     messages.success(request, 'Product deleted!')
     return redirect(reverse('products'))
-
-
-def wishlists(request):
-    """ get wishlist"""
-
-    wishlist = get_object_or_404(WishList, user=request.user)
-
-    context = {
-            'wishlist': wishlist,
-        }
-    
-    print(wishlist)
-
-    return render(request, 'products/product_detail.html', context)
