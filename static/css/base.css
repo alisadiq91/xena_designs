@@ -21,9 +21,17 @@ body {
     float: left;
 }
 
-.border-md-right:hover {
+.border-hover:hover {
     border-bottom: solid 3px black;
   }
+
+.border-top {
+    border-top: solid 2px black;
+}
+
+.nav-height {
+    height: 60px;
+}
 
 
 .title {
@@ -38,8 +46,12 @@ body {
 }
 
 .title-colour:hover {
-    color: grey;
     text-decoration: none;
+}
+
+.title:hover{
+    text-decoration: none;
+    color: black;
 }
 
 .free-delivery{
@@ -55,6 +67,11 @@ body {
 .navbar-light .navbar-nav .nav-link {
     color: inherit;
     text-decoration: none;
+
+}
+
+.nav-link:hover {
+    color: black !important;
 
 }
 
@@ -90,7 +107,7 @@ a {
 
 
 .shop-now-button:hover {
-    color: grey;
+    color: black;
 }
 
 video {

@@ -57,44 +57,44 @@
     </div>
     <div class="container-fluid">
       <div class="row">
-        <div class="col bg-black pt-2 border-bottom">
-          <div class="float-left py-2 title"><a href="{% url 'home' %}"><img  src="/media/logo.png" width="70" height="70">&nbsp;&nbsp;&nbsp; XENA DESIGNS</a></div>
+        <div class="col pt-2 border-bottom">
+          <div class="float-left py-2"><a class="title" href="{% url 'home' %}"><img  src="/media/logo.png" width="70" height="70">&nbsp;&nbsp;&nbsp; XENA DESIGNS</a></div>
           <ul class="float-right pt-3">
            
           {% if request.user.is_authenticated %}
           
-                      <li class="nav-item border-md-right list-inline-item ">
-                        <a class="nav-link" href="{% url 'profile' %}"><i class="fas fa-user mx-2"></i>My Profile</a>
+                      <li class="nav-item border-hover list-inline-item ">
+                        <a class="nav-link" href="{% url 'profile' %}">My Profile</a>
                       </li>
                       
                       {% if request.user.is_superuser %}
-                          <li class="nav-item border-md-right list-inline-item ">
-                            <a class="nav-link" href="{% url 'add_product' %}"><i class="fas fa-edit mx-2"></i>Product Management</a>
+                          <li class="nav-item border-hover list-inline-item ">
+                            <a class="nav-link" href="{% url 'add_product' %}">Product Management</a>
                           </li>
                       {% endif %}
-                      <li class="nav-item border-md-right list-inline-item ">
-                        <a class="nav-link" href="{% url 'account_logout' %}"><i class="fas fa-sign-out-alt mx-2"></i>Logout</a>
+                      <li class="nav-item border-hover list-inline-item ">
+                        <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                       </li>
                   {% else %}
-                    <li class="nav-item border-md-right list-inline-item ">
-                      <a class="nav-link" href="{% url 'account_login' %}"><i class="fas fa-user mx-2"></i>Login</a>
+                    <li class="nav-item border-hover list-inline-item ">
+                      <a class="nav-link" href="{% url 'account_login' %}">Login</a>
                     </li>
-                    <li class="nav-item border-md-right list-inline-item">
-                      <a class="nav-link" href="{% url 'account_login' %}"><i class="far fa-registered mx-2"></i>Register</a>
+                    <li class="nav-item border-hover list-inline-item">
+                      <a class="nav-link" href="{% url 'account_login' %}">Register</a>
                     </li>
                     
       
                   {% endif %}
                   {% if request.user.is_authenticated %}
-                  <li class="nav-item border-md-right list-inline-item ">
-                    <a class="nav-link" href="{% url 'wishlist' %}"><i class="fas fa-heart mx-2"></i>Wishlist</a>
+                  <li class="nav-item border-hover list-inline-item ">
+                    <a class="nav-link" href="{% url 'wishlist' %}"><i class="fas fa-heart mx-2"></i></a>
                   </li>
                   {% else %}
-                  <li class="nav-item border-md-right list-inline-item ">
-                    <a class="nav-link" href="{% url 'login' %}"><i class="fas fa-heart mx-2"></i>Wishlist</a>
+                  <li class="nav-item border-hover list-inline-item ">
+                    <a class="nav-link" href="{% url 'account_login' %}"><i class="fas fa-heart mx-2"></i></a>
                   </li>
                   {% endif %}
-                  <li class="nav-item list-inline-item ">
+                  <li class="nav-item list-inline-item border-hover ">
                   <a class="nav-link" href="{% url 'view_basket' %}"><i class="fas fa-shopping-cart mx-2"></i>{% if product_count > 0 %}
                               £{{ total|floatformat:2 }}
                           {% else %}
@@ -117,8 +117,8 @@
       </div>
     </div>
   
-    <div class="container-fluid">
-        <div class="border-bottom d-flex justify-content-center ">
+    <div class="border-bottom nav-height container-fluid">
+        <div class="d-flex justify-content-center ">
           <nav class="navbar navbar-expand-lg navbar-light">
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -126,28 +126,28 @@
             
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                  <li class="nav-item active border-md-right px-5">
+                  <li class="nav-item active border-hover px-5">
                     <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
                   </li>
-                  <li class="nav-item border-md-right px-5">
+                  <li class="nav-item border-hover px-5">
                     <a class="nav-link" href="{% url 'products' %}">All Products</a>
                   </li>
-                  <li class="nav-item border-md-right px-5">
+                  <li class="nav-item border-hover px-5">
                     <a class="nav-link" href="{% url 'products' %}?category=Personalised">Personalised</a>
                   </li>
-                  <li class="nav-item border-md-right px-5">
+                  <li class="nav-item border-hover px-5">
                     <a class="nav-link" href="{% url 'products' %}?category=Cake">Cake Stands</a>
                   </li>
-                  <li class="nav-item border-md-right px-5">
+                  <li class="nav-item border-hover px-5">
                     <a class="nav-link" href="{% url 'products' %}?category=Trays">Trays</a>
                   </li>
-                  <li class="nav-item border-md-right px-5">
+                  <li class="nav-item border-hover px-5">
                     <a class="nav-link" href="{% url 'products' %}?category=Coasters">Coasters</a>
                   </li>
-                  <li class="nav-item border-md-right px-5">
+                  <li class="nav-item border-hover px-5">
                     <a class="nav-link" href="{% url 'products' %}?category=Accessories">Accessories</a>
                   </li>
-                  <li class="nav-item border-md-right px-5">
+                  <li class="nav-item border-hover px-5">
                     <a class="nav-link" href="{% url 'reviews' %}">Reviews</a>
                   </li>          
                 </ul>
