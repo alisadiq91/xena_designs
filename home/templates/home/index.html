@@ -31,18 +31,18 @@
             </div>
 </div>
 
-<div class="container capitalize text-center my-3">
+<div class="container capitalize text-center my-3 p-3 border">
     <h2 class="font-weight-light">Customer Feedback</h2>
     <div class="row mx-auto my-auto">
         <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
             
             <div class="carousel-inner w-100" role="listbox">
                 {% for reviews in review %}
-                <div id="activeCarousel" class="carousel-item">
+                <div id="activeCarousel" class="text-white carousel-item">
                     
                     <div class="col-md-4 col-sm-12">
-                        <div class="card carousel-height card-body">
-                            <p><strong> Review </strong><br>{{ reviews.comments }}</p>
+                        <div class="card carousel-height card-body bg-dark">
+                            <p>{{ reviews.comments }}</p>
                             <p><strong> Date </strong><br>{{ reviews.date_created }}</p>
                             <p><strong> By </strong><br>{{ reviews.creator }}</p>
                         </div>
