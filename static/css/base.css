@@ -13,6 +13,10 @@ body {
     font-weight: bold;
 }
 
+.text-white{
+    color: white;
+}
+
 .float-right {
     float: right;
 }
@@ -102,7 +106,7 @@ a {
 
 
 .text-black {
-    color: black; !important
+    color: black !important; 
 }
 
 
@@ -155,7 +159,24 @@ video {
 
 .product-img {
     height: 350px;
-    width: 350px;
+    width: 450px;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+.font-bolder {
+    font-weight: bolder !important;
+}
+
+.btn-border {
+    background-color: black;
+    color: white;
+}
+
+.carousel-height {
+    height: 300px;
 }
 
 /* Allauth form formatting */
@@ -209,7 +230,7 @@ video {
 }
 
 .allauth-form-inner-content a {
-	color: #17a2b8; /* text-info */
+	color:white; /* text-info */
 }
 
 /* Product Form */

@@ -31,30 +31,8 @@
             </div>
 </div>
 
-<div class="container">
-    <div class="row">
-        <div class="col-6">
-                Personalised Items
-        </div>
-        <div class="col-6">
-                Trays
-        </div>
-    </div>
-</div>
-
-<div class="container">
-    <div class="row">
-        <div class="col-6">
-                Cake Stands
-        </div>
-        <div class="col-6">
-                Coasters
-        </div>
-    </div>
-</div>
-
-<div class="container text-center my-3">
-    <h2 class="font-weight-light">Our Reviews</h2>
+<div class="container capitalize text-center my-3">
+    <h2 class="font-weight-light">Customer Feedback</h2>
     <div class="row mx-auto my-auto">
         <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
             
@@ -62,8 +40,8 @@
                 {% for reviews in review %}
                 <div id="activeCarousel" class="carousel-item">
                     
-                    <div class="col-md-4">
-                        <div class="card card-body">
+                    <div class="col-md-4 col-sm-12">
+                        <div class="card carousel-height card-body">
                             <p><strong> Review </strong><br>{{ reviews.comments }}</p>
                             <p><strong> Date </strong><br>{{ reviews.date_created }}</p>
                             <p><strong> By </strong><br>{{ reviews.creator }}</p>
