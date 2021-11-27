@@ -45,14 +45,15 @@
                                 <td class="py-3">
                                     <p class="my-0"><strong>{{ product.name }}</strong></p>
                                     <p class="my-0 small text-muted">Product Code: {{ product.sku|upper }}</p>
+                                    <p class="my-0"><a class="remove-list-item text-danger" href="{% url 'remove_from_wishlist' product.id %}">Remove</a></p>
                                 </td>
                                 
                                 <td class="py-3">
                                     <p class="my-0">£{{ product.price }}</p>
                                 </td>
-                                <td>
+                                <td class="pt-3">
                                 <a class="text-info" href="{% url 'product_detail' product.id %}">Add to bag</a>
-                                <a class="remove-list-item text-danger float-right" href="{% url 'remove_from_wishlist' product.id %}">Remove</a>
+                                
                                 </td>
                             </tr>
             

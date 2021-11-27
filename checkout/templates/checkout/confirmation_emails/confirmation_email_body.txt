@@ -13,7 +13,9 @@ Your order will be shipped to {{ order.street_address1 }} in {{ order.town_or_ci
 
 We've got your phone number on file as {{ order.phone_number }}.
 
-If you have any questions, feel free to contact us at {{ contact_email }}.
+If you have ordered a personalised product or would like to alter the colour of the product you have ordered then please contact us at {{ contact_email }} within 48 hours.
+
+If you have any other questions, feel free to contact us at {{ contact_email }}.
 
 Thank you for your order and for supporting our business!
 

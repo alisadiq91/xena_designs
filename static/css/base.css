@@ -175,9 +175,44 @@ video {
     color: white;
 }
 
+
+.btn-grey {
+    background-color: grey;
+    color: white;
+}
+
 .carousel-height {
     height: 300px;
 }
+
+.review-bg {
+    background-image: linear-gradient(grey, black, grey);
+}
+
+.hover-none:hover {
+    text-decoration: none !important;
+    color: white;
+}
+
+.hover-bottom:hover {
+    text-decoration: none !important;
+    color: black;
+    border-bottom: solid black 3px;
+}
+
+.btn-border:hover {
+    text-decoration: none !important;
+    color: white;
+    background-color: #222;
+    border-color: #222;
+}
+
+.created-by:hover {
+    text-decoration: none !important;
+    color: grey;
+    border-bottom: solid grey 3px;
+}
+
 
 /* Allauth form formatting */
 
@@ -246,8 +281,8 @@ video {
     right: 0;
     min-width: 100%;
     min-height: 100%;
-    opacity: 0;
     cursor: pointer;
+    border-bottom: solid 1px black;
 }
 
 .custom-checkbox .custom-control-label::before {
