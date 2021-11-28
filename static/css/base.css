@@ -3,7 +3,6 @@ html {
 }
 
 body {
-    /* This is a single-line comment background: url('/media/home.png') no-repeat center center fixed; */
     background-size: cover;
     background-color: white;
     height: calc(100vh - 164px);
@@ -187,6 +186,10 @@ video {
 
 .review-bg {
     background-image: linear-gradient(grey, black, grey);
+}
+
+.review-border {
+    border: 5px solid grey;
 }
 
 .hover-none:hover {

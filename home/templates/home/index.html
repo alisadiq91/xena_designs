@@ -38,13 +38,15 @@
             
             <div class="carousel-inner w-100" role="listbox">
                 {% for reviews in review %}
-                <div id="activeCarousel" class="text-white carousel-item">
+                <div id="activeCarousel" class="carousel-item">
                     
                     <div class="col-md-4 col-sm-12">
-                        <div class="card carousel-height card-body review-bg m-3">
-                            <p>{{ reviews.comments }}</p>
-                            <p><strong> Date </strong><br>{{ reviews.date_created }}</p>
-                            <p><strong> By </strong><br>{{ reviews.creator }}</p>
+                        
+                        <div class="review-border card carousel-height card-body m-3">
+                            <p class="text-uppercase card-title review-card-title"><u>{{ reviews.title }}</u></p>
+                            <p class="py-3 font-italic">{{ reviews.comments }}<br></p>
+                            <p class="text-muted"><br>{{ reviews.date_created }}</p>
+                            <p class="text-muted"><strong> By </strong>{{ reviews.creator }}</p>
                         </div>
                     </div>
                     

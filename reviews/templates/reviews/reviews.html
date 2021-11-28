@@ -21,29 +21,34 @@
     </div>
 </div>
 {% endif %}
-{% for review in reviews %}
+
 <div class="my-3">
-   <div class="container capitalize">
-      <div class="card review-bg text-white">
-         <div class="text-center mx-2 mt-4 card-content review-card-content">
-            <h4 class="card-title review-card-title">{{ review.title }}</h4>
-         </div>
-         <div class="card-action">
-            <p class="mx-2 my-4 font-bolder">{{ review.comments }}</p>
-            <p class="mx-2 my-4"><strong> Date </strong>: {{ review.date_created }}</p>
-            <p class="mx-2 my-4"><strong> By </strong>{{ review.creator }}</p>
-            <!--Edit/Delete Review Buttons-->
-            <div class="card-action text-center mb-4">
-               {% if request.user.userprofile == review.creator %}
-               <a class="btn btn-dark" href="{% url 'edit_review' review.id %}"
-                  aria-label="Edit review from {{ review.creator }}">Edit</a>
-               <a class="btn btn-danger" href="{% url 'delete_review' review.id %}">Delete</a>
-               {% endif %}
+   <div class="container-fluid  capitalize">
+      <div class="row d-flex justify-content-center ">
+         {% for review in reviews %} 
+
+            <div class="col-3 my-3 mx-2 review-border card text-center">
+               <div class="mx-2 mt-4 card-content review-card-content">
+                  <h4 class="text-uppercase card-title review-card-title"><u>{{ review.title }}</u></h4>
+               </div>
+               <div class="card-action">
+                  <p class="mx-2 my-4 font-weight-bolder font-italic">{{ review.comments }}</p>
+                  <p class="mx-2 my-4 font-weight-light text-muted"><strong> Date </strong>: {{ review.date_created }}</p>
+                  <p class="mx-2 my-4 font-weight-light text-muted"><strong> By </strong>{{ review.creator }}</p>
+                  <!--Edit/Delete Review Buttons-->
+                  <div class="card-action text-center mb-4">
+                     {% if request.user.userprofile == review.creator %}
+                     <a class="btn btn-dark" href="{% url 'edit_review' review.id %}"
+                        aria-label="Edit review from {{ review.creator }}">Edit</a>
+                     <a class="btn btn-danger" href="{% url 'delete_review' review.id %}">Delete</a>
+                     {% endif %}
+                  </div>
+               </div>
             </div>
-         </div>
+         {% endfor %}
       </div>
    </div>
 </div>
-{% endfor %}
+      
 
 {% endblock %}
