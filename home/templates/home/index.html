@@ -12,7 +12,7 @@
 {% block content %}
 <div class="my-auto py-1 py-lg-0 text-center text-lg-left display-mobile">
     <a href="{% url 'home' %}" class="nav-link main-logo-link">
-        <h2 class="logo-font text-black"><img  src="{{ MEDIA_URL }}logo.png" width="70" height="70">&nbsp;&nbsp;&nbsp; <strong>XENA</strong> DESIGNS</h2>
+        <h2 class="logo-font text-black"><img  src="{{ MEDIA_URL }}logo.PNG" width="70" height="70">&nbsp;&nbsp;&nbsp; <strong>XENA</strong> DESIGNS</h2>
     </a>
 </div>
 <div class="container-fluid py-1">
@@ -20,9 +20,9 @@
            
         
         
-            <video playsinline autoplay muted loop poster="/media/Package.PNG" id="bgvid" >
-                <source src="{{ MEDIA_URL }}home-video.mp4" type="video/webm">
-                <source src="{{ MEDIA_URL }}home-video.mp4" type="video/mp4">
+            <video playsinline autoplay muted loop poster="{{ MEDIA_URL }}Package.PNG" id="bgvid" >
+                <source src="{{ MEDIA_URL }}home-video.MP4" type="video/webm">
+                <source src="{{ MEDIA_URL }}home-video.MP4" type="video/mp4">
             </video>
             <div class="overlay-text p-5">
                 <p id="topText">
