@@ -27,7 +27,7 @@ If you have ordered a personalised product or would like to alter the colour of 
 
 If you have any other questions, feel free to contact us at {{ contact_email }}.
 
-Don't forget to leave us a review <a href="{% url 'reviews' %}">here!</a>
+Don't forget to leave us a review on our website!
 
 Thank you for your order and for supporting our business!
 

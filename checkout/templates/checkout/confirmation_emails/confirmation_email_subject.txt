@@ -1,1 +1,1 @@
-Xena Designs Confirmation for Order Number {{ order.order_number }}
+Xena Designs Order Confirmation
