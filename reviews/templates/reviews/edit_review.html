@@ -1,9 +1,27 @@
 {% extends "base.html" %}
 {% load static %}
-{% block extra_css %}
 
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
 {% endblock %}
+
 {% block content %}
+
+<div class="container-fluid">
+   <div class="row">
+      <div class="col text-center my-3">
+         
+      
+   
+      </div>
+   </div>
+</div>
+
 {% if user.is_authenticated %}
 <!--Edit Review Content and Form-->
 <div id="reviews-container-edit-add" class="no-floating-footer">
@@ -11,7 +29,7 @@
    <div class="container">
       <form method="POST" action="{% url 'edit_review' review.id %}" class="form card-panel">
          <h1>Edit Your Review</h1>
-         <p class="large-text center-align">Please fill out the form below to edit own review</p>
+         <p class="large-text center-align">Please fill out the form below to edit your review</p>
          {% csrf_token %}
          {{ form }}
          <div class="center">
