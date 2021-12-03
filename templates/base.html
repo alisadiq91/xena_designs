@@ -46,121 +46,108 @@
     <title>Xena Designs {% block extra_title %}{% endblock %}</title>
   </head>
   <body>
-    <div class="free-delivery border-bottom">
-      <div class="container-fluid">
-      <div class="row">
-        <div class="col bg-black pt-2 text-center">
-          <h4>FREE UK DELIVERY WHEN YOU SPEND OVER £{{ free_delivery_threshold }}!</h4>
+    
+    <header class="container-fluid fixed-top">
+      <div class="free-delivery border-bottom">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col bg-black pt-2 text-center">
+              <h4>FREE UK DELIVERY WHEN YOU SPEND OVER £{{ free_delivery_threshold }}!</h4>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    </div>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col pt-2 border-bottom">
-          <div class="float-left py-2"><a class="title" href="{% url 'home' %}"><img  src="/media/logo.png" width="70" height="70">&nbsp;&nbsp;&nbsp; XENA DESIGNS</a></div>
-          <ul class="float-right pt-3">
-           
-          {% if request.user.is_authenticated %}
-          
-                      <li class="nav-item border-hover list-inline-item ">
-                        <a class="nav-link" href="{% url 'profile' %}">My Profile</a>
-                      </li>
-                      
-                      {% if request.user.is_superuser %}
-                          <li class="nav-item border-hover list-inline-item ">
-                            <a class="nav-link" href="{% url 'add_product' %}">Product Management</a>
-                          </li>
-                      {% endif %}
-                      <li class="nav-item border-hover list-inline-item ">
-                        <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
-                      </li>
-                  {% else %}
-                    <li class="nav-item border-hover list-inline-item ">
-                      <a class="nav-link" href="{% url 'account_login' %}">Login</a>
-                    </li>
-                    <li class="nav-item border-hover list-inline-item">
-                      <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
-                    </li>
-                    
-      
-                  {% endif %}
-                  {% if request.user.is_authenticated %}
-                  <li class="nav-item border-hover list-inline-item ">
-                    <a class="nav-link" href="{% url 'wishlist' %}"><i class="fas fa-heart mx-2"></i></a>
-                  </li>
-                  {% else %}
-                  <li class="nav-item border-hover list-inline-item ">
-                    <a class="nav-link" href="{% url 'account_login' %}"><i class="fas fa-heart mx-2"></i></a>
-                  </li>
-                  {% endif %}
-                  <li class="nav-item list-inline-item border-hover ">
-                  <a class="nav-link" href="{% url 'view_basket' %}"><i class="fas fa-shopping-cart mx-2"></i>{% if product_count > 0 %}
-                              £{{ total|floatformat:2 }}
+      <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
+          <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
+              <a href="{% url 'home' %}" class="nav-link main-logo-link">
+                  <h2 class="logo-font text-black my-0"><strong>Xena</strong> Designs</h2>
+              </a>
+          </div>
+          <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+              <form method="GET" action="{% url 'products' %}">
+                  <div class="input-group w-100">
+                      <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our site">
+                      <div class="input-group-append">
+                          <button class="form-control btn btn-black border border-black rounded-0" type="submit">
+                              <span class="icon">
+                                  <i class="fas fa-search"></i>
+                              </span>
+                          </button>
+                      </div>
+                  </div>
+              </form>
+          </div>
+          <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+              <ul class="list-inline list-unstyled text-center text-lg-right my-0">
+                  <li class="list-inline-item dropdown">
+                      <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <div class="text-center">
+                              <div><i class="fas fa-user fa-lg"></i></div>
+                              <p class="my-0">My Account</p>
+                          </div>
+                      </a>
+                      <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                          {% if request.user.is_authenticated %}
+                              {% if request.user.is_superuser %}
+                                  <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
+                              {% endif %}
+                              <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
+                              <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                           {% else %}
-                          
+                              <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                              <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
                           {% endif %}
-                  </a>
+                      </div>
+                  </li>
+                  <li class="list-inline-item">
+                    {% if request.user.is_authenticated %}
+                    <a class="text-black nav-link" href="{% url 'wishlist' %}">
+                        <div class="text-center">
+                            <div><i class="fas fa-heart fa-lg"></i></div>
+                            <p class="my-0">
+                              Wishlist
+                            </p>
+                        </div>
+                    </a>
+                    {% else %}
+                    <a class="text-black nav-link" href="{% url 'account_login' %}">
+                      <div class="text-center">
+                          <div><i class="fas fa-heart fa-lg"></i></div>
+                          <p class="my-0">
+                            Wishlist
+                          </p>
+                      </div>
+                    </a>
+                  {% endif %}
+
                 </li>
-                </ul>
-        </div>
+                  <li class="list-inline-item">
+                      <a class="basket-link {% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_basket' %}">
+                          <div class="text-center">
+                              <div><i class="fas fa-shopping-cart fa-lg"></i></div>
+                              <p class="my-0">
+                                {% if product_count > 0 %}
+                                  £{{ total|floatformat:2 }}
+                                {% else %}
+                                  Basket
+                                {% endif %}
+                              </p>
+                          </div>
+                      </a>
+                  </li>
+              </ul>
+          </div>
       </div>
-    </div>
-
-   
-    <div class="container-fluid py-2 border-bottom">
-      <div class="search-bar d-flex justify-content-center">
-          <form method="GET" action="{% url 'products' %}" class="form-inline">
-            <input class="search-width form-control mr-sm-2" type="search" placeholder="Search for a product..." aria-label="Search" name='q'>
-            <button class="btn btn-light btn-outline-dark" type="submit"><i class="fas fa-search"></i></button>
-          </form>
-      </div>
-    </div>
-  
-    <div class="border-bottom nav-height container-fluid">
-        <div class="d-flex justify-content-center ">
-          <nav class="navbar navbar-expand-lg navbar-light">
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+      <div class="row bg-white">
+          <nav class="navbar navbar-expand-lg navbar-light w-100">
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
               </button>
-            
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                  <li class="nav-item active border-hover px-5">
-                    <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
-                  </li>
-                  <li class="nav-item border-hover px-5">
-                    <a class="nav-link" href="{% url 'products' %}">All Products</a>
-                  </li>
-                  <li class="nav-item border-hover px-5">
-                    <a class="nav-link" href="{% url 'products' %}?category=Personalised">Personalised</a>
-                  </li>
-                  <li class="nav-item border-hover px-5">
-                    <a class="nav-link" href="{% url 'products' %}?category=Cake">Cake Stands</a>
-                  </li>
-                  <li class="nav-item border-hover px-5">
-                    <a class="nav-link" href="{% url 'products' %}?category=Trays">Trays</a>
-                  </li>
-                  <li class="nav-item border-hover px-5">
-                    <a class="nav-link" href="{% url 'products' %}?category=Coasters">Coasters</a>
-                  </li>
-                  <li class="nav-item border-hover px-5">
-                    <a class="nav-link" href="{% url 'products' %}?category=Accessories">Accessories</a>
-                  </li>
-                  <li class="nav-item border-hover px-5">
-                    <a class="nav-link" href="{% url 'reviews' %}"><i class="fas fa-star"> </i>&nbsp;&nbsp; Reviews &nbsp;&nbsp;<i class="fas fa-star"> </i></a>
-                  </li>          
-                </ul>
-              
-                
-              </div>
-        </nav>
-        </div>
+              {% include 'includes/mobile-top-header.html' %}
+              {% include 'includes/main-nav.html' %}
+          </nav>
       </div>
-
-      
-      
-      
+  </header>
     {% if messages %}
     <div class="message-container">
       {% for message in messages %}
