@@ -12,6 +12,7 @@ body {
     font-weight: bold;
 }
 
+/* General use accross the website */
 .text-white{
     color: white;
 }
@@ -32,8 +33,73 @@ body {
     border-top: solid 2px black;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.pad-top {
+    padding-top: 30px;
+}
+
+.bg-white {
+    background-color: white;
+}
+
+.text-middle {
+    text-align: center !important; 
+}
+
+.border-bottom {
+    border-bottom: solid 1px black;
+}
+
+.text-black {
+    color: black !important; 
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+.font-bolder {
+    font-weight: bolder !important;
+}
+
+.btn-border {
+    background-color: black;
+    color: white;
+}
+
+.btn-grey {
+    background-color: grey;
+    color: white;
+}
+
+.hover-none:hover {
+    text-decoration: none !important;
+    color: white;
+}
+
+.hover-bottom:hover {
+    text-decoration: none !important;
+    color: black;
+    border-bottom: solid black 3px;
+}
+
+.btn-border:hover {
+    text-decoration: none !important;
+    color: white;
+    background-color: #222;
+    border-color: #222;
+}
+
+.hover-grey:hover {
+    color: grey !important;
+}
 
 
+/* Title */
 .title {
     
     font-weight: bold;
@@ -59,6 +125,8 @@ body {
     background-color: black;
     font-size: large;
 }
+
+/* navigation bar */
 .navbar {
     color: black ;
     font-weight: bold;
@@ -75,41 +143,16 @@ body {
 
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-.pad-top {
-    padding-top: 30px;
-}
-
-
-.bg-white {
-    background-color: white;
-}
-
-.text-middle {
-    text-align: center !important; 
-}
-.border-bottom {
-    border-bottom: solid 1px black;
-}
-
 .form-inline .form-control {
     width: 700px;
 }
-
-
-.text-black {
-    color: black !important; 
-}
-
 
 .shop-now-button:hover {
     color: black;
 }
 
+
+/* video and overlay */
 video {
     width: 95vw;
 }
@@ -132,6 +175,7 @@ video {
     cursor: pointer;
 }
 
+/* messages and toasts */
 .message-container {
     position: fixed;
     top: 72px;
@@ -158,55 +202,6 @@ video {
     width: 450px;
 }
 
-.capitalize {
-    text-transform: capitalize;
-}
-
-.font-bolder {
-    font-weight: bolder !important;
-}
-
-.btn-border {
-    background-color: black;
-    color: white;
-}
-
-
-.btn-grey {
-    background-color: grey;
-    color: white;
-}
-
-.carousel-height {
-    height: 300px;
-}
-
-.review-bg {
-    background-image: linear-gradient(grey, black, grey);
-}
-
-.review-border {
-    border: 5px solid grey;
-}
-
-.hover-none:hover {
-    text-decoration: none !important;
-    color: white;
-}
-
-.hover-bottom:hover {
-    text-decoration: none !important;
-    color: black;
-    border-bottom: solid black 3px;
-}
-
-.btn-border:hover {
-    text-decoration: none !important;
-    color: white;
-    background-color: #222;
-    border-color: #222;
-}
-
 .created-by:hover {
     text-decoration: none !important;
     color: grey;
@@ -217,11 +212,6 @@ video {
     text-decoration: none;
     color: black !important;
 }
-
-.hover-grey:hover {
-    color: grey !important;
-}
-
 
 /* Allauth form formatting */
 
@@ -305,7 +295,20 @@ video {
     border-radius: 0;
 }
 
-/* Carousel */
+/* Review Carousel and review page
+Carousel from https://www.codeply.com/go/EIOtI7nkP8/bootstrap-carousel-with-multiple-cards  */
+
+.carousel-height {
+    height: 300px;
+}
+
+.review-bg {
+    background-image: linear-gradient(grey, black, grey);
+}
+
+.review-border {
+    border: 5px solid grey;
+}
 
 @media (max-width: 768px) {
     .carousel-inner .carousel-item > div {
@@ -341,7 +344,7 @@ video {
   transform: translateX(0);
 }
 
-/* fixed top navbar only on medium and up */
+/* for devices larger than 992px in width */
 @media (min-width: 992px) {
     .fixed-top-desktop-only {
         position: fixed;
@@ -360,7 +363,7 @@ video {
     }
 }
 
-/* pad the top a bit when navbar is collapsed on mobile */
+/* for devices smaller than 991px in width */
 @media (max-width: 991px) {
     .header-container {
         padding-top: 116px;
@@ -413,9 +416,8 @@ video {
     .border-hover:hover {
         border-bottom: none;
       }
-
-       .mobile-slogan {
-        
+    
+    .mobile-slogan {
         display: none;        
       }
 
