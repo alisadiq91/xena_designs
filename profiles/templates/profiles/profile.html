@@ -24,6 +24,7 @@
             </div>
         </div>
         <div class="row">
+            <!--a pre-filled form for users to update their information-->
             <div class="col-12 col-lg-6 border">
                 <p class="text-muted my-3">Default Delivery Information</p>
                 <form action="{% url 'profile' %}" method="POST" id="profile-update-form">
@@ -45,9 +46,11 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <!--A table to show users their order history-->
                             {% for order in orders %}
                                 <tr>
                                     <td>
+                                        <!--A link to take a user to their previous order confirmation-->
                                         <a href="{% url 'order_history' order.order_number %}"
                                         title="{{ order.order_number }}">
                                             {{ order.order_number|truncatechars:6 }}
@@ -73,4 +76,5 @@
                 </div>
             </div>
         </div>
+    </div>
 {% endblock %}

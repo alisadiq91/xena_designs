@@ -36,6 +36,7 @@
                         </a>
                     </p>
                     {% endif %}
+                    <!--Allows superuser to edit/delete products-->
                     {% if request.user.is_superuser %}
                         <small class="ml-3">
                             <a href="{% url 'edit_product' product.id %}">Edit</a> | 
@@ -47,6 +48,7 @@
                     <form class="form" action="{% url 'add_to_basket' product.id %}" method="POST">
                         {% csrf_token %}
                         <div class="form-row">
+                            <!--allows user to choose a size if available-->
                             {% with product.has_sizes as s %}
                             {% if s %}
                                 <div class="col-12">
@@ -87,7 +89,7 @@
                                     </div>
                                 </div>
                             </div>
-                                   
+                             <!--Allows user to add to wishlist if logged in-->      
                             <div class="col-12">
                                 <input type="submit" class="btn btn-border text-uppercase my-3" value="Add to Bag">
                                 {% if request.user.is_authenticated %}
@@ -103,8 +105,6 @@
                                 {% else %} 
                                     <a class="btn btn-border text-uppercase" href="{% url 'account_login' %}">Add to Wishlist</a>
                                 {% endif %}
-                                
-                                
                             </div>
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                             {% endwith %}

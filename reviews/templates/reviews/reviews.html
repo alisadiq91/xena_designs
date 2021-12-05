@@ -10,21 +10,18 @@
 {% endblock %}
 
 {% block content %}
-<!--Main Review Content-->
+
 <div id="reviews-container">
-   
       <div class="container-fluid">
          <div class="row">
             <div class="col text-center my-3">
-               
                   <h2>Reviews</h2>
-         
             </div>
          </div>
       </div>
-   
 </div>
 
+<!--Link to allow users to add a review if they are logged in-->
 {% if request.user.is_authenticated %}
 <div class="container">
     <div class="row d-flex justify-content-center">
@@ -33,11 +30,11 @@
 </div>
 {% endif %}
 
+<!--Cards to show reviews-->
 <div class="my-3">
    <div class="container-fluid  capitalize">
       <div class="row d-flex justify-content-center ">
          {% for review in reviews %} 
-
             <div class="col-sm-12 col-lg-3 my-3 mx-2 review-border card text-center">
                <div class="mx-2 mt-4 card-content review-card-content">
                   <h4 class="text-uppercase card-title review-card-title"><u>{{ review.title }}</u></h4>
@@ -46,8 +43,8 @@
                   <p class="mx-2 my-4 font-weight-bolder font-italic">{{ review.comments }}</p>
                   <p class="mx-2 my-4 font-weight-light text-muted"><strong> Date </strong>: {{ review.date_created }}</p>
                   <p class="mx-2 my-4 font-weight-light text-muted"><strong> By </strong>{{ review.creator }}</p>
-                  <!--Edit/Delete Review Buttons-->
                   <div class="card-action text-center mb-4">
+                     <!--Option for user to edit or delete their review if they were the creator-->
                      {% if request.user.userprofile == review.creator %}
                      <a class="btn btn-dark" href="{% url 'edit_review' review.id %}"
                         aria-label="Edit review from {{ review.creator }}">Edit</a>

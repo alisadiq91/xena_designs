@@ -31,6 +31,7 @@
             <div class="sort-select-wrapper w-50">
                 <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
                     <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
+                    <!--allows user to sort by price-->
                     <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
                     <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
                 </select>
@@ -38,6 +39,7 @@
         </div>
         {% endif %}
         <div class="col-12 col-md-6 order-md-first">
+            <!--tells user how many products found through their search/selection-->
             <p class="text-muted mt-3 text-center text-md-left">
                 {{ products|length }} Products{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
             </p>
@@ -48,6 +50,7 @@
         <div class="product-container col-10 offset-1">
             <div class="row mt-1 mb-2"></div>
                 <div class="row">
+                    <!--a for loop to show each product and it's details minus the description-->
                     {% for product in products %}
                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                             <div class="card h-100 border-0">
@@ -78,6 +81,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                <!--allow superuser to edit/delete a product-->
                                 {% if request.user.is_superuser %}
                                 <small class="ml-3">
                                     <a href="{% url 'edit_product' product.id %}">Edit</a> | 
@@ -86,6 +90,7 @@
                             {% endif %}
                             </div>
                         </div>
+                        <!--modify where the hr is depending on screen size-->
                         {% if forloop.counter|divisibleby:1 %}
                         <div class="col-12 d-sm-none mb-5">
                             <hr>

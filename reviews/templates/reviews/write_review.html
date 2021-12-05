@@ -11,22 +11,21 @@
 
 {% block content %}
 
+<!--for margin purposes-->
 <div class="container-fluid">
    <div class="row">
       <div class="col text-center my-3">
-         
-   
       </div>
    </div>
 </div>
 
-<!--Add Review Content and Form-->
+<!--Form for users to add their own review-->
 <div id="reviews-container-edit-add" class="no-floating-footer">
 <div class="overlay"></div>
    <div class="container">
       <form method="POST" action="{% url 'write_review' %}" class="form card-panel">
          <h1>Add Your Review</h1>
-         <p class="large-text center-align">Please fill out the form below to create your own review</p>
+         <p class="large-text center-align">Fill out the form below to write your own review</p>
          {% csrf_token %}
          {{ form }}
          <div class="center-align">

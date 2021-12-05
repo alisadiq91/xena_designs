@@ -1,8 +1,6 @@
 <script type="text/javascript">
 
-    /* 
-    * Disable +/- buttons outside 1-99 range.
-    */
+    // Disable plus/minus buttons outside 1-99 range
     function handleEnableDisable(itemId, size) {
         if (size) {
             var currentValue = parseInt($(`.size_${itemId}_${size}`).val());

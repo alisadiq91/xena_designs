@@ -10,53 +10,51 @@
 {% endblock %}
 
 {% block content %}
+<!--logo and brand for mobile-->
 <div class="my-auto py-1 py-lg-0 text-center text-lg-left display-mobile">
     <a href="{% url 'home' %}" class="nav-link main-logo-link">
         <h2 class="logo-font text-black"><img  src="{{ MEDIA_URL }}logo.PNG" width="70" height="70">&nbsp;&nbsp;&nbsp; <strong>XENA</strong> DESIGNS</h2>
     </a>
 </div>
 <div class="container-fluid mt-5 d-none d-lg-block"></div>
-<div class="container-fluid ">     
-            <video playsinline autoplay muted loop poster="{{ MEDIA_URL }}Package.PNG" id="bgvid" >
-                <source src="{{ MEDIA_URL }}home-video.MP4" type="video/webm">
-                <source src="{{ MEDIA_URL }}home-video.MP4" type="video/mp4">
-            </video>
-            <div class="overlay-text p-5  d-none d-lg-block ">
-                <p id="topText">
-                    <h1 class="mobile-slogan display-4 logo-font text-black my-5">
-                    View our collections here!
-                    </h1>
-                    <h4>
-                        <a href="{% url 'products' %}" class="shop-now-button btn btn-light btn-outline-dark btn-lg rounded-0 text-uppercase py-3">Shop Now</a>
-                    </h4>
-                </p>
-            </div>
-            <div class="mobile-shop-now mt-3 d-flex justify-content-center d-block d-lg-none">
-                <h4>
-                    <a href="{% url 'products' %}" class="shop-now-button btn btn-light btn-outline-dark btn-lg rounded-0 text-uppercase py-3">Shop Now</a>
-                </h4>
-            
-            </div>  
+<!--home page video and shop now overlay-->
+<div class="container-fluid">     
+    <video playsinline autoplay muted loop poster="{{ MEDIA_URL }}Package.PNG" id="bgvid" >
+        <source src="{{ MEDIA_URL }}home-video.MP4" type="video/webm">
+        <source src="{{ MEDIA_URL }}home-video.MP4" type="video/mp4">
+    </video>
+    <div class="overlay-text p-5  d-none d-lg-block ">
+        <p id="topText">
+            <h1 class="mobile-slogan display-4 logo-font text-black my-5">
+            View our collections here!
+            </h1>
+            <h4>
+                <a href="{% url 'products' %}" class="shop-now-button btn btn-light btn-outline-dark btn-lg rounded-0 text-uppercase py-3">Shop Now</a>
+            </h4>
+        </p>
+    </div>
+    <div class="mobile-shop-now mt-3 d-flex justify-content-center d-block d-lg-none">
+        <h4>
+            <a href="{% url 'products' %}" class="shop-now-button btn btn-light btn-outline-dark btn-lg rounded-0 text-uppercase py-3">Shop Now</a>
+        </h4>
+    
+    </div>  
 </div>
-
+<!--Feedback carousel-->
 <div class="container capitalize text-center my-3 p-3 border">
     <h2 class="font-weight-light">Customer Feedback</h2>
     <div class="row mx-auto my-auto">
-        <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
-            
+        <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel"> 
             <div class="carousel-inner w-100" role="listbox">
                 {% for reviews in review %}
                 <div id="activeCarousel" class="carousel-item">
-                    
                     <div class="col-lg-4 col-md-12">
-                        
                         <div class="review-border card carousel-height card-body m-3">
                             <p class="text-uppercase card-title review-card-title"><u>{{ reviews.title }}</u></p>
                             <p class="py-3 font-italic">{{ reviews.comments }}<br></p>
                             <p class="text-muted"><strong> By </strong>{{ reviews.creator }}</p>
                         </div>
                     </div>
-                    
                 </div>
                 {% endfor %} 
             </div>
@@ -72,7 +70,6 @@
         </div>
     </div>
     <h5 class="mt-2 text-muted"><a href="{% url 'reviews' %}">Click to see more</a></h5>
-    
 </div>
 
     {% block postloadjs %}
