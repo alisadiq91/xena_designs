@@ -15,7 +15,7 @@
         <h2 class="logo-font text-black"><img  src="{{ MEDIA_URL }}logo.PNG" width="70" height="70">&nbsp;&nbsp;&nbsp; <strong>XENA</strong> DESIGNS</h2>
     </a>
 </div>
-<div class="container-fluid py-1">
+<div class="container-fluid my-5">
     
            
         
@@ -45,12 +45,11 @@
                 {% for reviews in review %}
                 <div id="activeCarousel" class="carousel-item">
                     
-                    <div class="col-md-4 col-sm-12">
+                    <div class="col-lg-4 col-md-12">
                         
                         <div class="review-border card carousel-height card-body m-3">
                             <p class="text-uppercase card-title review-card-title"><u>{{ reviews.title }}</u></p>
                             <p class="py-3 font-italic">{{ reviews.comments }}<br></p>
-                            <p class="text-muted"><br>{{ reviews.date_created }}</p>
                             <p class="text-muted"><strong> By </strong>{{ reviews.creator }}</p>
                         </div>
                     </div>
