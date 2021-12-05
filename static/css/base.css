@@ -341,80 +341,6 @@ video {
   transform: translateX(0);
 }
 
-/* text over video media queries for all devices */
-@media screen and (min-width: 300px) {
-    .overlay-text{
-        
-         top:32%;
-         left:20%;
-         
-         
-         padding: 0;
-       }
-    }
-
-@media screen and (min-width: 400px) {
-        .overlay-text{
-            
-             top:37%;
-             left:23%;
-             
-             
-             padding: 0;
-           }
-        }
-@media screen and (min-width: 600px) {
-    .overlay-text{
-        
-         top:42%;
-         left:32%;
-         
-         
-         padding: 0;
-       }
-    }
-
-@media screen and (min-width: 700px) {
-        .overlay-text{
-            
-             top:35%;
-             left:34%;
-             
-             
-             padding: 0;
-           }
-        }
-    
-
-@media screen and (min-width: 800px) {
-        .overlay-text{
-            
-             top:55%;
-             left:35%;
-             
-             
-             padding: 0;
-           }
-        }
-
-@media screen and (min-width: 810px) {
-        .overlay-text{
-                
-            top:100%;
-            left:35%;
-            padding: 0;     
-               }
-    }
-
-@media screen and (min-width: 1000px) {
-        .overlay-text{
-                    
-            top:40%;
-            left:10%;
-                   }
-    }
-        
-
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
     .fixed-top-desktop-only {
@@ -492,5 +418,6 @@ video {
         
         display: none;        
       }
+
 }
 
