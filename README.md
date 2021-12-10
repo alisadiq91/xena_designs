@@ -36,6 +36,7 @@ The website is called Xena Designs. They are a small business that creates resin
     + [**Reviews**](#reviews-page)
     + [**Basket**](#basket-page)
     + [**Checkout**](#checkout-page)
+    + [**Toasts**](#toasts)
 
   * [4. **Technologies Used**](#Technologies)
 
@@ -356,8 +357,370 @@ My Account dropdown list :
 
 1. I wanted to add the option where the user can register via their social media accounts or email accounts but I did not have the time to do this.
 
+# **Profile page**
+
+* Languages used – HTML, CSS, Python
+
+* Frameworks, Libraries & Programs Used - [Font Awesome](https://fontawesome.com/), Bootstrap, Django
+
+### Profile page Wireframe
+
+![wireframe-profile-desktop](https://github.com/alisadiq91/xena_designs/blob/main/media/README/wireframes/wf-profile.jpeg)
+
+### Profile page desktop
+
+![profile-desktop](https://github.com/alisadiq91/xena_designs/blob/main/media/README/profile-dt.png)
+
+![profile-mobile-1](https://github.com/alisadiq91/xena_designs/blob/main/media/README/profile-mb-1.png)
+![profile-mobile-2](https://github.com/alisadiq91/xena_designs/blob/main/media/README/profile-mb-2.png)
+
+## Features
+
+1. Default Delivery Information - here the user will see their saved delivery information. When the user checks out, if they are logged in they are given the option to save the information to their profile. The user can update their information through their profile at any time. 
+
+2. Order History - here the user will see all the orders they have placed. This is done as a table, where the headings are order number, date, items, and order total. The user can click the order number which will take them to their order confirmation screen giving them more information about the order.
+
+## Features to implement:
+
+1. I had the idea that a user could add and manage their debit/credit cards on their profile so they could use these during the checkout.
 
 
+# **Product Management page**
+
+* Languages used – HTML, CSS, Python, JavaScript
+
+* Frameworks, Libraries & Programs Used - Bootstrap, Django, JQuery
+
+### Product Management page Wireframe
+
+![wireframe-management](https://github.com/alisadiq91/xena_designs/blob/main/media/README/wireframes/wf-addproduct.jpeg)
+
+### Product Management page desktop
+
+![add-product-desktop](https://github.com/alisadiq91/xena_designs/blob/main/media/README/add-product-dt.png)
+
+![edit-product](https://github.com/alisadiq91/xena_designs/blob/main/media/README/edit-product.png)
+
+## Features
+
+1. This page is only available to admin/superusers. If the user tries to access this page without being a superuser, they will be redirected to the login page (if not logged in) or the home page (if logged in but not a superuser).
+
+2. The form - the form to add the product has the following fields:
+
+  1. Category - using a dropdown list
+  2. Sku
+  3. Name 
+  4. Description
+  5. Has sizes - using a dropdown list
+  6. Price
+  7. Image URL
+  8. Image Upload
+
+  The form uses crispy forms from django. The validation of these form is all provided by this.
+
+3. If the superuser is editing a product, the same form is shown but it is pre-filled with the relevant product details. 
+
+## Features to implement:
+
+1. I had the idea to have a card for each product on the management page where the admin can easily navigate products and edit/delete them without having to find them through the products page. 
+
+2. I also had the idea of having different types of users. For example having a manager user who can perform all actions. Where as a sales manager user who can only edit products instead of deleting them.
 
 
+# **Wishlist**
+
+* Languages used – HTML, CSS, Python, JavaScript
+
+* Frameworks, Libraries & Programs Used - Bootstrap, Django, JQuery
+
+### Wishlist page Wireframe
+
+![wireframe-wishlist](https://github.com/alisadiq91/xena_designs/blob/main/media/README/wireframes/wf-wishlist.jpeg)
+
+### Wishlist page desktop
+
+![wishlist-desktop](https://github.com/alisadiq91/xena_designs/blob/main/media/README/wishlist-dt.png)
+
+### Wishlist page mobile
+
+![wishlist-mobile](https://github.com/alisadiq91/xena_designs/blob/main/media/README/wishlist-mb.png)
+
+## Features
+
+1. This page is only available to users who are logged in. If a user is not logged in and try to access this page they are taken to the login page.
+
+2. The Wishlist - the page is very simple. It shows all the products the user has added to their wishlist in a table, similar to the basket. 
+
+3. Add/Remove options - the user is given the option to remove the item from the wishlist. The user is also given the option to add the item to their basket. Clicking this link will take the user to the product detail page.
+
+## Features to implement:
+
+1. If I had more time I would have wanted to add an option where the user can add the item straight to their basket from the wishlist, instead of going through the product detail page. 
+
+2. It would also have been a good idea to include a "share your wishlist" option. Where the user can send their wishlist via email/social media to a friend. 
+
+
+# **Reviews**
+
+* Languages used – HTML, CSS, Python
+
+* Frameworks, Libraries & Programs Used - Bootstrap, Django
+
+### Review page Wireframe desktop
+
+![wireframe-review-desktop](https://github.com/alisadiq91/xena_designs/blob/main/media/README/wireframes/wf-reviews-dt.jpeg)
+
+### Review page Wireframe mobile
+
+![wireframe-review-mobile](https://github.com/alisadiq91/xena_designs/blob/main/media/README/wireframes/wf-reviews-mb.jpeg)
+
+### Reviews page desktop
+
+![reviews-desktop](https://github.com/alisadiq91/xena_designs/blob/main/media/README/reviews-dt.png)
+
+### Reviews page mobile
+
+![reviews-mobile](https://github.com/alisadiq91/xena_designs/blob/main/media/README/reviews-mb.png)
+
+## Features
+
+1. This is a simple page which shows the users the reviews that have been added by other users.
+
+2. The cards show the review title, comment, date, and who it was created by.
+
+3. Add review - if the user is logged in, they are shown a link where they can add a review. They are taken to a form for them to add a review. This is shown below:
+
+### Add review Wireframe
+
+![wireframe-add-review]()
+
+### Add review page desktop
+
+![add-review-desktop](https://github.com/alisadiq91/xena_designs/blob/main/media/README/add-review-dt.png)
+
+### Add review page mobile
+
+![add-review-desktop](https://github.com/alisadiq91/xena_designs/blob/main/media/README/add-review-mb.png)
+
+4. Edit/Delete - the user is shown buttons to both edit and delete their review if they were the one who created it. If the user chooses to edit their review they are taken to the page shown below which is a pre-filled form with the relevant title and comment :
+
+### Edit Review page
+
+![edit-review](https://github.com/alisadiq91/xena_designs/blob/main/media/README/edit-review.png)
+
+5. Mobile responsiveness - the cards are shown one on each line if the device is a smaller screen. 
+
+## Features to implement:
+
+1. I was considering having only users that have bought a product to be allowed to write a review. However the business has all of it's sales from instagram at the moment, so this would rule customers out from being able to write a review.
+
+2. If I had more time I would have added the option for customers to review individual products that they buy.
+
+3. I would have liked to be able to add a star rating to the reviews.
+
+# **Basket**
+
+* Languages used – HTML, CSS, Python, JavaScript
+
+* Frameworks, Libraries & Programs Used - Bootstrap, Django, JQuery, [Font Awesome](https://fontawesome.com/)
+
+### Basket page Wireframe desktop
+
+![wireframe-basket-desktop](https://github.com/alisadiq91/xena_designs/blob/main/media/README/wireframes/wf-basket-dt.jpeg)
+
+### Basket page Wireframe mobile
+
+![wireframe-basket-mobile](https://github.com/alisadiq91/xena_designs/blob/main/media/README/wireframes/wf-basket-mb.jpeg)
+
+### Basket page desktop
+
+![basket-desktop](https://github.com/alisadiq91/xena_designs/blob/main/media/README/basket-dt.png)
+
+### Basket page mobile
+
+![basket-mobile-1](https://github.com/alisadiq91/xena_designs/blob/main/media/README/basket-mb-1.png)
+![basket-mobile-2](https://github.com/alisadiq91/xena_designs/blob/main/media/README/basket-mb-2.png)
+
+## Features
+
+1. The user is shown a table summarising the products they have bought. The table has the following headings - Product Info, price, quantity, and subtotal. The product info contains an image of the product, as well as it's name, product code, and size if applicable.
+
+2. Quantity - the quantity column gives the user the option to increase or decrease the quantity. Once they do this, there is an update option for them to click once the quantity has changed. There is also a remove option where the user can remove the product from the basket completely.
+
+3. Price summary - underneath the table the user is shown the basket total, along with the delivery charge. If the delivery charge is less than the free delivery threshold, the user is told how much they need to spend before they qualify for free delivery. The grand total is then shown.
+
+4. Buttons - at the bottom of the page the user is shown a checkout button, as well as a keep shopping button. The checkout button takes the user to a secure checkout. The keep shopping button returns the user to the products page.
+
+5. Empty basket - if the user has no items in their basket, they are told their basket is empty and shown a button to return the user to the products page, as well as a button to view their wishlist. This is shown below:
+
+![empty-basket](https://github.com/alisadiq91/xena_designs/blob/main/media/README/basket-empty.png)
+
+6. Mobile responsiveness - to get the table to respond to mobiles, I had to create seperate HTML files and use includes to include them in the main HTML file. This allowed me to easily adjust the table and have it respond to mobile devices.
+
+# **Checkout**
+
+* Languages used – HTML, CSS, Python, JavaScript
+
+* Frameworks, Libraries & Programs Used - Bootstrap, Django, JQuery, [Font Awesome](https://fontawesome.com/)
+
+### Checkout page Wireframe desktop
+
+![wireframe-checkout-desktop](https://github.com/alisadiq91/xena_designs/blob/main/media/README/wireframes/wf-checkout-dt.jpeg)
+
+### Checkout page Wireframe mobile
+
+![wireframe-checkout-mobile](https://github.com/alisadiq91/xena_designs/blob/main/media/README/wireframes/wf-checkout-mb.jpeg)
+
+### Checkout page desktop
+
+![checkout-desktop](https://github.com/alisadiq91/xena_designs/blob/main/media/README/checkout-dt.png)
+
+### Checkout page mobile
+
+![checkout-mobile](https://github.com/alisadiq91/xena_designs/blob/main/media/README/checkout-mb.png)
+
+## Features
+
+1. This is a simple page which contains a form for the user to fill out their delivery and billing details, as well as a basket summary.
+
+2. Basket Summary - to the right of the page the user is shown an order summary. This shows the user the items they are ordering with subtotal, order total, delivery, and grand total.
+
+3. Details form - the page contains a crispy form for the user to fill out. It asks for their contact details, delivery information and their card details. The form validation is done by Django. 
+
+4. Save information - if the user is logged in, they are given an option to tick a checkbox to save their delivery information for use later. If the user is not logged in they are still told they can register or login to save this information.
+
+5. Buttons - at the bottom of the form the user is shown 2 buttons, one to adjust their basket and the other to complete their order.
+
+6. Stripe Payment - the card details are checked by stripe. If the card details are incorrect the user will be shown an error message that is relevant. An example is shown below : 
+
+![card-error](https://github.com/alisadiq91/xena_designs/blob/main/media/README/card-error.png)
+
+7. Loading overlay - once the user attempts to checkout, they are shown a loading overlay. This will either take the user to the checkout success page or return them to the checkout page if there is an error.
+
+8. Stripe webhooks - I set up stripe webhooks by following the boutique ado project. This is done to ensure that if users place an order and there is an error at some point, the order will still reach the business if the error is not because of any incorrect details. The business can still view the order in the django admin and also in their stripe account. 
+
+9. Checkout Success - once the order has gone through, the user is taken to a checkout success page where they are shown their order confirmation. This shows the user the details of their order and lets them know that they will recieve a confirmation email also. These two are shown below :
+
+ - Checkout Success:
+ ![checkout-success](https://github.com/alisadiq91/xena_designs/blob/main/media/README/order-confirm-dt.png)
+
+ - Order confirmation email:
+ ![email-confirmation](https://github.com/alisadiq91/xena_designs/blob/main/media/README/email-confirm.png)
+
+10. Mobile responsiveness - on mobiles the basket summary is placed above the checkout form.
+
+## Features to implement:
+
+1. As mentioned above in the profile section, I was considering adding an option for a user to save their card details for future purchases. 
+
+# **Toasts**
+
+* Languages used – HTML, CSS, Python, JavaScript
+
+* Frameworks, Libraries & Programs Used - Bootstrap, Django, JQuery, [Font Awesome](https://fontawesome.com/)
+
+### Toast Success example
+
+![toast-success](https://github.com/alisadiq91/xena_designs/blob/main/media/README/toast-sucess.png)
+
+### Toast Success with Basket
+
+![toast-basket](https://github.com/alisadiq91/xena_designs/blob/main/media/README/toast-sucess-basket.png)
+
+## Features
+
+1. These toasts are shown whenever a user interacts with the website. For example if a user signs in they are met with an alert telling them that they have signed in as user. There are 4 types of toasts - error, info, success, and warning.
+
+2. Basket summary - if the user adds a product to their basket they are shown a preview of their basket as well as the success message. If there are no items in the users basket, no preview is shown. 
+
+# **TECHNOLOGIES**
+
+## Languages Used
+
+* HTML5
+
+* CSS3 
+
+* JavaScript
+
+* Python
+
+## Frameworks, Libraries & Programs Used
+
+* Bootstrap
+
+    * Bootstrap was used to assist with the responsiveness and styling of the website.
+
+* Google Fonts:
+
+    * Google fonts was used to obtain the El Missiri font.
+
+* Font Awesome:
+
+    * Font Awesome icons were used regularly on the website
+
+* JQuery:
+
+    * JQuery was used to make it easier to use JavaScript. It gives me cleaner code and is very effective.
+
+* Django:
+
+    * Django was used as it enables rapid development of secure and maintainable websites. It saved me a vast amount of time. 
+
+* AWS (Amazon Web Services):
+
+    * AWS was used to store all the images and videos through a web interface.
+
+* Stripe Payments:
+
+    * Stripe Payments were used to allow the website to take card payments. It is a fast and easy to implement service.
+
+* [JSON Formatter](https://jsonformatter.org/):
+
+    * A JSON formatter was used to make my code more readable when uploading the products.  
+
+* Git
+
+    * Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
+
+* GitHub:
+
+    * GitHub is used to store the projects code after being pushed from Git.
+
+* Heroku:
+
+    * Heroku is used for remote hosting the website.
+
+
+# **TESTING**
+
+[This section can be found here.](https://github.com/alisadiq91/middleEasternCookbook/blob/master/testing.md)
+
+# **DEPLOYMENT**
+
+# **CONTENT**
+
+### All content was written by the coder apart form those listed below.
+
+* [Bootstrap footer](https://mdbootstrap.com/docs/b4/jquery/navigation/footer/)
+
+* [Bootstrap carousel](https://www.codeply.com/go/EIOtI7nkP8/bootstrap-carousel-with-multiple-cards)
+
+* Parts of this project were completed using the Boutique Ado project.
+
+# **MEDIA**
+
+### I obtained my images personally from the business owner. The only images not from the business owner are below:
+
+* [No Image](https://media.istockphoto.com/vectors/no-image-available-icon-vector-id1216251206?k=20&m=1216251206&s=612x612&w=0&h=BANco7qp0Ofqkod-ODPsbZVqVok7R5qUSznMN0AsMx8=)
+
+# **ACKNOWLEDGEMENTS**
+
+* My Mentor for continuous helpful feedback.
+
+* The Code Institute tutor support team for pointing me in the right direction when I needed help.
+
+# **Thank you!!**
+
+#### Thank you for taking the time to enjoy my fourth project as a web developer. I thoroughly enjoyed creating this website, as I got to create an e-commerce website which is something I have always wanted to do! This is a website that I would like to go live in the near future as the business is something that is important to me. I hope you enjoy using my website!
 
