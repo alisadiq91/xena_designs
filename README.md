@@ -16,6 +16,7 @@ The website is called Xena Designs. They are a small business that creates resin
     + [**First time users**](#first-time-visitor-goals)
     + [**Returning users**](#returning-visitor-goals)
     + [**Frequent users**](#frequent-user-goals)
+    + [**Admin users**](#admin-user-goals)
 
   * [2. **Design**](#DESIGN)
     + [**Colour Scheme**](#colour-scheme)
