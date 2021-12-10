@@ -1,6 +1,15 @@
 {% extends "base.html" %}
 {% load static %}
 
+<!--Title to show category chosen or product if no category chosen-->
+{% block extra_title %}| {% if 'category' in request.GET %}
+{% for c in current_categories %}
+    {{ c.friendly_name }}
+{% endfor %}  
+{% else %}  
+    Products
+{% endif %}{% endblock %}
+
 {% block page_header %}
     <div class="container header-container">
         <div class="row">

@@ -2,6 +2,7 @@
 {% load static %}
 {% load bag_tools %}
 
+{% block extra_title %}| Wishlist{% endblock %}
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
@@ -59,7 +60,7 @@
             {% empty %}
             <!--if the wishlist is empty-->
                 <p class="lead mb-5">Your wishlist is empty.</p>
-                <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                <a href="{% url 'products' %}" class="btn btn-secondary btn-lg mb-5">
                     <span class="icon">
                         <i class="fas fa-chevron-left"></i>
                     </span>

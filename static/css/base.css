@@ -10,6 +10,9 @@ body {
     font-family: 'El Messiri', sans-serif;
     font-size: large;
     font-weight: bold;
+    max-width: 2000px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .overlay {
