@@ -708,7 +708,7 @@ The Code Institute student template was used to create this project.
 
 ### Project and Repository Creation
 
-Follow these steps to clone/create a similar repository:
+Follow these steps to create a similar repository:
 
 1. Navigate to [Github](https://github.com/).
 
@@ -796,27 +796,32 @@ Once those steps are done, the website can be deployed in Heroku using the steps
 
     - SECRET_KEY
 
-    - STRIPE_PRICE_ID
-
     - STRIPE_PUBLIC_KEY
 
     - STRIPE_SECRET_KEY
 
     - STRIPE_WH_SECRET
-    
+
     - USE_AWS
 
-- The values of these variables are secret and for security purposes wont be shared here. 
-
 ### Setting up the AWS s3 bucket
+
 1. Create an Amazon AWS account
+
 2. Search for S3 and create a new bucket
+
     - Allow public access
+
 3. Under Properties > Static website hosting
+
     - Enable
+
     - index.html as index.html
+
     - save
+    
 4. Under Permissions > CORS use the following:
+
 ```
 [
   {
@@ -835,93 +840,137 @@ Once those steps are done, the website can be deployed in Heroku using the steps
   }
 ]
 ```
+
 5. Under Permissions > Bucket Policy:
+
     - Generate Bucket Policy and take note of Bucket ARN
+
     - Chose S3 Bucket Policy as Type of Policy
+
     - For Principal, enter *
+
     - Enter ARN noted above
+
     - Add Statement
+
     - Generate Policy
+
     - Copy Policy JSON Document
+
     - Paste policy into Edit Bucket policy on the previous tab
-    - Save changes
-6. Under Access Control List (ACL):
-    - For Everyone (public access), tick List
-    - Accept that everyone in the world may access the Bucket
+
     - Save changes
 
-**AWS IAM (Identity and Access Management) setup**
+6. Under Access Control List (ACL):
+
+    - For Everyone (public access), tick List
+
+    - Accept that everyone in the world may access the Bucket
+
+    - Save changes
+
+**AWS Identity and Access Management (IAM) setup**
+
 1. From the IAM dashboard within AWS, select User Groups:
+
     - Create a new group
+
     - Click through and Create Group
+
 2. Select Policies:
+
     - Create policy
+
     - Under the JSON tab, click Import managed policy
+
     - Choose AmazonS3FullAccess
+
     - Edit the resource to include the Bucket ARN noted earlier when creating the Bucket Policy
+
     - Click next step and go to Review policy
+
     - Give the policy a name and description of your choice
+
     - Create policy
-3. Go back to User Groups and choose the group created earlier
+
+3. Go back to User Groups and choose the group you created earlier
+
     - Under Permissions > Add permissions, choose Attach Policies and select the one just created
+
     - Add permissions
+
 4. Under Users:
+
     - Choose a username 
+
     - Select Programmatic access as the Access type
+
     - Click Next
+
     - Add the user to the Group just created
+
     - Click Next and Create User
+
 5. Download the `.csv` containing the access key and secret access key.
-    - **THE `.csv` FILE IS ONLY AVAILABLE ONCE AND CANNOT BE DOWNLOADED AGAIN, BE SURE TO SAVE THE FILE SOMEWHERE.**
+
+    - **IIMPORTANT - THE `.csv` FILE IS ONLY AVAILABLE ONCE AND CANNOT BE DOWNLOADED AGAIN, BE SURE TO SAVE THE FILE SOMEWHERE.**
 
 **Connecting Heroku to AWS S3**
-1. Install boto3 and django-storages
+
+1. Install boto3 and django-storages using the following commands in CLI:
+
 ```
 pip3 install boto3
 pip3 install django-storages
 pip3 freeze > requirements.txt
 ```
-2. Add the values from the `.csv` you downloaded to your Heroku Config Vars under Settings:
-3. Delete the `DISABLE_COLLECTSTATIC` variable from your Cvars and deploy your Heroku app
+
+2. Add the values from the `.csv` you downloaded to your Heroku Config Vars under Settings.
+
+3. Delete the `DISABLE_COLLECTSTATIC` variable from your Config Vars and deploy your Heroku app.
+
 4. With your S3 bucket now set up, you can create a new folder called media (at the same level as the newly added static folder) and upload any required media files to it.
-    - **PLEASE MAKE SURE `media` AND `static` FILES ARE PUBLICLY ACCESSIBLE UNDER PERMISSIONS**
+
+    - **IMPORTANT - MAKE SURE `media` AND `static` FILES ARE PUBLICLY ACCESSIBLE UNDER PERMISSIONS**
 
 
 ### Enable automatic deployment:
 
 1. Click the Deploy tab
-2. In the Automatic deploys section, choose the branch you want to deploy from then click Enable Automation Deploys.
+
+2. In the Automatic deploys section, choose the branch you want to deploy from and then click Enable Automation Deploys.
 
 
 ### Connect app to Github Repository
 
 1. Click the deploy tab and connect to GitHub.
+
 2. Type the name of the repository into the search bar presented.
+
 3. Click the Code dropdown button next to the green Gitpod button.
+
 4. When the correct repository displays click the connect button.
+
 
 ### Making a clone to run locally
 
-It is important to note that this project will not run locally unless an env.py file has been set up by the user which contains the IP, PORT, MONGO_DBNAME, MONGO_URI and SECRET_KEY which have all been kept secret in keeping with best security practices. 
-
 1. Log into GitHub.
-2. Select the [respository](https://github.com/adilkhr/my-ms4-project).
+
+2. Select the [respository](https://github.com/alisadiq91/xena_designs).
+
 3. Click the Code dropdown button next to the green Gitpod button.
+
 4. Download ZIP file and unpackage locally and open with IDE. Alternatively, copy the URL in the HTTPS box.
+
 5. Open the alternative editor and terminal window.
+
 6. Type 'git clone’ and paste the copied URL.
+
 7. Press Enter. A local clone will be created.
 
-Once the project has been loaded into the IDE it is necessary to install the necessary requirements which can be done by typing the following command.
+Once the project has been loaded into the IDE it is necessary to install the necessary requirements which can be done by typing the following command
 
     -pip install -r requirements.txt
-
-### How to Fork the repository.
-
-1. Log into GitHub.
-2. In Github go to (https://github.com/adilkhr/my-ms4-project).
-3. In the top right-hand corner click "Fork".
-
 
 # **CONTENT**
 
@@ -931,7 +980,7 @@ Once the project has been loaded into the IDE it is necessary to install the nec
 
 * [Bootstrap carousel](https://www.codeply.com/go/EIOtI7nkP8/bootstrap-carousel-with-multiple-cards)
 
-* Parts of this project were completed using the Boutique Ado project.
+* Parts of this project were completed using the [Boutique Ado](https://github.com/Code-Institute-Solutions/boutique_ado_v1) project.
 
 # **MEDIA**
 
