@@ -2,6 +2,7 @@ from django.shortcuts import render
 from reviews.models import Review
 # Create your views here.
 
+
 def index(request):
     """ View to return the index page with reviews """
 
@@ -10,4 +11,3 @@ def index(request):
         'review': review
     }
     return render(request, 'home/index.html', context)
-
