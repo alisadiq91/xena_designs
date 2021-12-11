@@ -26,6 +26,9 @@ body {
 }
 
 /* General use accross the website */
+.black-background {
+    background-color: black !important;
+}
 .text-white{
     color: white;
 }
