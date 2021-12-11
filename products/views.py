@@ -43,7 +43,7 @@ def all_products(request):
                 messages.error(request, "No search criteria was entered")
                 return redirect(reverse('products'))
 
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
+            queries = Q(name__icontains=query) | Q(description__icontains=query)  # noqa: E501
             products = products.filter(queries)
 
     current_sorting = f'{sort}_{direction}'
@@ -63,7 +63,7 @@ def product_detail(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
     if request.user.is_authenticated:
-        product_in_wishlist = request.user.wishlist.products.filter(pk=product_id).count() > 0
+        product_in_wishlist = request.user.wishlist.products.filter(pk=product_id).count() > 0  # noqa: E501
     else:
         product_in_wishlist = False
 

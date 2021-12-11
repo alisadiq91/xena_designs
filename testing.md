@@ -48,7 +48,7 @@
 
 * I also used the command python3 -m flake8 to check if any files have any imports that are not being used.
 
-* There were only a few warnings that I could not fix. These were lines that were too long but these were necessary as trying to fix this would cause invalid syntax errors. There was also a warning to avoid null=True on string based fields but I felt that was necessary as I was following boutique ado.
+* I used # noqa: E501 comment to ignore some lines that were too long. These could not be changed as they altered the syntax. There was also a warning to avoid null=True on string based fields but I felt that was necessary as I was following boutique ado.
 
 ## Bugs 
 
