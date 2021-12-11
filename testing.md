@@ -10,15 +10,13 @@
    
   * [3. **Javascript Code Quality Tool**](#Javascript-Code-Quality-Tool)
    
-  * [4. **Lighthouse**](#Lighthouse)
+  * [4. **PEP8 Validation**](#PEP8-validation)
 
-  * [5. **PEP8 Validation**](#PEP8-validation)
+  * [5. **Bugs**](#bugs)
 
-  * [6. **Bugs**](#bugs)
+  * [6. **UX Testing**](#ux-testing)
 
-  * [7. **UX Testing**](#ux-testing)
-
-  * [8. **Further Testing**](#further-testing)
+  * [7. **Further Testing**](#further-testing)
 
   ## HTML Validation
 
