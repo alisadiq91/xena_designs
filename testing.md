@@ -34,7 +34,7 @@
 
 ## CSS Validation
 
-* I used [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/validator)
+* I used [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/)
 
 * There were no errors found. 
 
