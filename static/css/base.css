@@ -436,3 +436,9 @@ Carousel from https://www.codeply.com/go/EIOtI7nkP8/bootstrap-carousel-with-mult
 
 }
 
+@media (max-width: 1400px) {
+    .nav-item {
+        padding: 0 !important;
+    }
+}
+
