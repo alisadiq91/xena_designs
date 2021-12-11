@@ -694,9 +694,234 @@ My Account dropdown list :
 
 # **TESTING**
 
-[This section can be found here.](https://github.com/alisadiq91/middleEasternCookbook/blob/master/testing.md)
+[This section can be found here.](https://github.com/alisadiq91/xena_designs/blob/main/testing.md)
 
 # **DEPLOYMENT**
+
+This project was developed using [Gitpod IDE](https://gitpod.io) and pushed to Github using the in-built terminal. 
+
+I had to deploy the project to Heroku as Github can only host static websites. Heroku is a compatible hosting platform for a back-end focused projects like this one.
+
+The Code Institute student template was used to create this project.
+
+[Code Institute Full Template](https://github.com/Code-Institute-Org/gitpod-full-template)
+
+### Project and Repository Creation
+
+Follow these steps to clone/create a similar repository:
+
+1. Navigate to [Github](https://github.com/).
+
+2. Login 
+
+3. Create a new repository by clicking new.
+
+4. Select the Code Institute template in the templates section.
+
+5. Give the repository a name.
+
+6. Click the green 'Create Repository' button at the bottom of the page.
+
+7. Inside the repository click the green 'gitpod' button to initialize your repository.
+
+8. If you want to load this workspace in the future, this must be done through gitpod.
+
+9. Use the `git add .` command to add all modified and new files to the staging area.
+
+10. Use the `git commit -m` command to commit a change to the local repository. Ensure you write a short statement saying what you have 
+
+11. Use the `git push` command to push all committed changes to Github.   
+
+Before deploying the website to Heroku, the steps below should be followed:
+
+1. Create a requirements.txt file that contains the names of packages being used in Python. It is important to update this file if other packages or modules are installed during project development. This is done by using this command:
+
+    - pip freeze --local > requirements.txt
+
+2. Create a Procfile that contains the name of the application file so that Heroku knows what to run.
+
+3. Push these files to GitHub using the way explained above. 
+
+4. Install `psycopg2` and `dj_datatbase_url` in your workspace CLI.
+
+Once those steps are done, the website can be deployed in Heroku using the steps listed below:
+
+### Deployment Steps
+
+1. Log into Heroku.
+
+2. Click the New button.
+
+3. Click the option to create a new app.
+
+4. Enter the app name in lowercase letters. This must be unique and Heroku will tell you if the app name has already been used.
+
+5. Select the correct geographical region closest to you. 
+
+### Connect Heroku app to Github repository
+
+1. In Heroku select the deploy tab.
+
+2. Click the GitHub button.
+
+3. Enter the repository name and click search.
+
+4. Select the relevant repository and click connect. 
+
+### Add Heroku Postgres Database
+
+1. Click the resources tab in Heroku.
+
+2. Under Add-ons search for Heroku Postgres.
+
+3. Click on Heroku Postgres when it appears. 
+
+4. Select the Hobby Dev-Free option in plans. 
+
+5. Click submit order form.
+
+### Setting up environment variables
+
+1. In the heroku settings click the reveal config vars button and set the following variables:
+
+    - AWS_ACCESS_KEY_ID
+
+    - AWS_SECRET_ACCESS_KEY
+
+    - DATABASE_URL
+
+    - EMAIL_HOST_PASS
+
+    - EMAIL_HOST_USER
+
+    - SECRET_KEY
+
+    - STRIPE_PRICE_ID
+
+    - STRIPE_PUBLIC_KEY
+
+    - STRIPE_SECRET_KEY
+
+    - STRIPE_WH_SECRET
+    
+    - USE_AWS
+
+- The values of these variables are secret and for security purposes wont be shared here. 
+
+### Setting up the AWS s3 bucket
+1. Create an Amazon AWS account
+2. Search for S3 and create a new bucket
+    - Allow public access
+3. Under Properties > Static website hosting
+    - Enable
+    - index.html as index.html
+    - save
+4. Under Permissions > CORS use the following:
+```
+[
+  {
+      "AllowedHeaders": [
+          "Authorization"
+      ],
+      "AllowedMethods": [
+          "GET"
+      ],
+      "AllowedOrigins": [
+          "*"
+      ],
+      "ExposeHeaders": [
+
+      ]
+  }
+]
+```
+5. Under Permissions > Bucket Policy:
+    - Generate Bucket Policy and take note of Bucket ARN
+    - Chose S3 Bucket Policy as Type of Policy
+    - For Principal, enter *
+    - Enter ARN noted above
+    - Add Statement
+    - Generate Policy
+    - Copy Policy JSON Document
+    - Paste policy into Edit Bucket policy on the previous tab
+    - Save changes
+6. Under Access Control List (ACL):
+    - For Everyone (public access), tick List
+    - Accept that everyone in the world may access the Bucket
+    - Save changes
+
+**AWS IAM (Identity and Access Management) setup**
+1. From the IAM dashboard within AWS, select User Groups:
+    - Create a new group
+    - Click through and Create Group
+2. Select Policies:
+    - Create policy
+    - Under the JSON tab, click Import managed policy
+    - Choose AmazonS3FullAccess
+    - Edit the resource to include the Bucket ARN noted earlier when creating the Bucket Policy
+    - Click next step and go to Review policy
+    - Give the policy a name and description of your choice
+    - Create policy
+3. Go back to User Groups and choose the group created earlier
+    - Under Permissions > Add permissions, choose Attach Policies and select the one just created
+    - Add permissions
+4. Under Users:
+    - Choose a username 
+    - Select Programmatic access as the Access type
+    - Click Next
+    - Add the user to the Group just created
+    - Click Next and Create User
+5. Download the `.csv` containing the access key and secret access key.
+    - **THE `.csv` FILE IS ONLY AVAILABLE ONCE AND CANNOT BE DOWNLOADED AGAIN, BE SURE TO SAVE THE FILE SOMEWHERE.**
+
+**Connecting Heroku to AWS S3**
+1. Install boto3 and django-storages
+```
+pip3 install boto3
+pip3 install django-storages
+pip3 freeze > requirements.txt
+```
+2. Add the values from the `.csv` you downloaded to your Heroku Config Vars under Settings:
+3. Delete the `DISABLE_COLLECTSTATIC` variable from your Cvars and deploy your Heroku app
+4. With your S3 bucket now set up, you can create a new folder called media (at the same level as the newly added static folder) and upload any required media files to it.
+    - **PLEASE MAKE SURE `media` AND `static` FILES ARE PUBLICLY ACCESSIBLE UNDER PERMISSIONS**
+
+
+### Enable automatic deployment:
+
+1. Click the Deploy tab
+2. In the Automatic deploys section, choose the branch you want to deploy from then click Enable Automation Deploys.
+
+
+### Connect app to Github Repository
+
+1. Click the deploy tab and connect to GitHub.
+2. Type the name of the repository into the search bar presented.
+3. Click the Code dropdown button next to the green Gitpod button.
+4. When the correct repository displays click the connect button.
+
+### Making a clone to run locally
+
+It is important to note that this project will not run locally unless an env.py file has been set up by the user which contains the IP, PORT, MONGO_DBNAME, MONGO_URI and SECRET_KEY which have all been kept secret in keeping with best security practices. 
+
+1. Log into GitHub.
+2. Select the [respository](https://github.com/adilkhr/my-ms4-project).
+3. Click the Code dropdown button next to the green Gitpod button.
+4. Download ZIP file and unpackage locally and open with IDE. Alternatively, copy the URL in the HTTPS box.
+5. Open the alternative editor and terminal window.
+6. Type 'git clone’ and paste the copied URL.
+7. Press Enter. A local clone will be created.
+
+Once the project has been loaded into the IDE it is necessary to install the necessary requirements which can be done by typing the following command.
+
+    -pip install -r requirements.txt
+
+### How to Fork the repository.
+
+1. Log into GitHub.
+2. In Github go to (https://github.com/adilkhr/my-ms4-project).
+3. In the top right-hand corner click "Fork".
+
 
 # **CONTENT**
 
@@ -719,6 +944,8 @@ My Account dropdown list :
 * My Mentor for continuous helpful feedback.
 
 * The Code Institute tutor support team for pointing me in the right direction when I needed help.
+
+* The Slack community for helping me with some queries
 
 # **Thank you!!**
 
