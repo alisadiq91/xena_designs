@@ -3,7 +3,7 @@ from .models import Review
 
 
 class WriteReview(forms.ModelForm):
-    """WriteReview form to allow users to create their
+    """Write Review form to allow users to create their
     own reviews.
     """
     class Meta:
@@ -13,8 +13,8 @@ class WriteReview(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         placeholders = {
-            'title': 'Title',
-            'comments': 'Write your review here',
+            'title': 'Review Title',
+            'comments': 'Please write your review/feedback here',
         }
 
         self.fields['title'].widget.attrs['autofocus'] = True

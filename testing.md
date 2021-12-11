@@ -54,7 +54,7 @@
 
 1. When using the carousel I had an issue because I wanted to use a for loop. The first item in the carousel needed to have an "active" class. To overcome this I had to use some Javascript. The code is shown below :
 
-  * ![bug-carousel](https://github.com/alisadiq91/xena_designs/blob/main/media/README/bug-carousel.png)
+![bug-carousel](https://github.com/alisadiq91/xena_designs/blob/main/media/README/bug-carousel.png)
 
 2. Toasts from allauth - I have a bug where the toasts that are supposed to show when a user logs in/registers/logs out are not showing. The toast div is appearing as I can see using the inspect tool but the actual text box is not showing. I tried to fix this but have had no luck. I did not have enough time to look more into it or contact student support as my deadline was approaching. Due to this bug, once a user logs in some of the toast box is covering the menu icons.
 

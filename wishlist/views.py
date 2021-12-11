@@ -28,8 +28,8 @@ def wishlist(request):
 @login_required
 def add_to_wishlist(request, product_id):
     """
-    Add a product from the store to the
-    wishlist for the logged in user
+    User to add a product
+    to their wishlist
     """
     product = get_object_or_404(Product, pk=product_id)
 
@@ -45,8 +45,8 @@ def add_to_wishlist(request, product_id):
 @login_required
 def remove_from_wishlist(request, product_id):
     """
-    Add a product from the store to the
-    wishlist for the logged in user
+    User to remove a product
+    from their wishlist
     """
     wishlist = WishList.objects.get(user=request.user)
     product = get_object_or_404(Product, pk=product_id)

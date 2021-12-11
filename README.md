@@ -492,7 +492,7 @@ My Account dropdown list :
 
 ### Add review Wireframe
 
-![wireframe-add-review]()
+![wireframe-add-review](https://github.com/alisadiq91/xena_designs/blob/main/media/README/wireframes/wf-add-review.jpeg)
 
 ### Add review page desktop
 

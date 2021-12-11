@@ -22,8 +22,8 @@ def reviews(request):
 
 @login_required
 def write_review(request):
-    """A view to allow users to write their own reviews
-    and add them to the site.
+    """A view for users to write their review
+    and add it to the site.
     """
     if request.method == 'POST':
         form = WriteReview(request.POST)
@@ -31,12 +31,12 @@ def write_review(request):
             review = form.save(commit=False)
             review.creator = UserProfile.objects.get(user=request.user)
             form.save()
-            messages.success(request, 'Review added!')
+            messages.success(request, 'Your Review has been added!')
             return redirect('reviews')
         else:
             messages.error(
                 request,
-                'Failed to add product. Please ensure the form is valid.')
+                'Failed to add review. Please ensure the form is valid.')
     else:
         form = WriteReview()
 
@@ -49,13 +49,14 @@ def write_review(request):
 
 @login_required
 def edit_review(request, review_id):
-    """A view to allow users to edit any reviews
-    they may have created.
+    """A view to let users to edit reviews
+    they have created.
     """
     try:
         review = get_object_or_404(Review, pk=review_id)
         if review.creator != request.user.userprofile:
-            messages.error(request, 'You do not have access to that Review!')
+            messages.error(request, 'Oops! You do not\
+                           have access to that Review!')
             return redirect('reviews')
 
         if request.method == 'POST':
@@ -64,7 +65,7 @@ def edit_review(request, review_id):
                 review = edit_form.save(commit=False)
                 review.creator = UserProfile.objects.get(user=request.user)
                 edit_form.save()
-                messages.success(request, 'Review updated!')
+                messages.success(request, 'Your review has been updated!')
                 return redirect('reviews')
 
         edit_form = WriteReview(instance=review)
@@ -87,7 +88,8 @@ def delete_review(request, review_id):
             review.delete()
             messages.success(request, 'Review Deleted!')
             return redirect('reviews')
-        messages.error(request, 'You are not the owner of this review.')
+        messages.error(request, 'Oops! You do not\
+                           have access to that Review!')
         return redirect('reviews')
     except Http404:
         messages.error(request, "Sorry! That review doesn't exist!")
