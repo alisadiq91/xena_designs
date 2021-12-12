@@ -41,6 +41,9 @@ body {
     float: left;
 }
 
+.border-hover {
+    border-bottom: solid 3px transparent;
+}
 .border-hover:hover {
     border-bottom: solid 3px black;
   }

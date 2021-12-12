@@ -73,9 +73,10 @@
 </div>
 
     {% block postloadjs %}
+    {{ block.super }}
     <!--JS for carousel from https://www.codeply.com/go/EIOtI7nkP8/bootstrap-carousel-with-multiple-cards-->
         <script type="text/javascript">
-
+        
         $(document).ready(function() {
             $('#activeCarousel').addClass('active');
         });
