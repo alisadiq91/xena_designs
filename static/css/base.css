@@ -442,9 +442,24 @@ Carousel from https://www.codeply.com/go/EIOtI7nkP8/bootstrap-carousel-with-mult
 
 }
 
+/* remove padding to ensure nav items fit on 1 line */
 @media (max-width: 1400px) {
     .nav-item {
         padding: 0 !important;
     }
 }
 
+/* ipad and ipad pro */
+@media (min-width: 1000px) and (max-width: 1100px) {
+    .title-size {
+        font-size: x-large;
+    }
+
+    .nav-size {
+        font-size: smaller;
+    }
+
+    .overlay-text{
+         top:29%;
+       }
+}
