@@ -351,7 +351,7 @@ My Account dropdown list :
 
 2.  Login – above the form, the user is shown where to login in case they have an account already. 
 
-3. Once the user has registered, they are told they must confirm their registration using the email they recieve. 
+3. Once the user has registered, they are told they must confirm their registration using the email they receive. 
 
 ## Features to implement:
 
@@ -555,7 +555,7 @@ My Account dropdown list :
 
 ![empty-basket](https://github.com/alisadiq91/xena_designs/blob/main/media/README/basket-empty.png)
 
-6. Mobile responsiveness - to get the table to respond to mobiles, I had to create seperate HTML files and use includes to include them in the main HTML file. This allowed me to easily adjust the table and have it respond to mobile devices.
+6. Mobile responsiveness - to get the table to respond to mobiles, I had to create separate HTML files and use includes to include them in the main HTML file. This allowed me to easily adjust the table and have it respond to mobile devices.
 
 # **Checkout**
 
@@ -599,7 +599,7 @@ My Account dropdown list :
 
 8. Stripe webhooks - I set up stripe webhooks by following the boutique ado project. This is done to ensure that if users place an order and there is an error at some point, the order will still reach the business if the error is not because of any incorrect details. The business can still view the order in the django admin and also in their stripe account. 
 
-9. Checkout Success - once the order has gone through, the user is taken to a checkout success page where they are shown their order confirmation. This shows the user the details of their order and lets them know that they will recieve a confirmation email also. These two are shown below :
+9. Checkout Success - once the order has gone through, the user is taken to a checkout success page where they are shown their order confirmation. This shows the user the details of their order and lets them know that they will receive a confirmation email also. These two are shown below :
 
  - Checkout Success:
  ![checkout-success](https://github.com/alisadiq91/xena_designs/blob/main/media/README/order-confirm-dt.png)
@@ -742,7 +742,7 @@ Before deploying the website to Heroku, the steps below should be followed:
 
 3. Push these files to GitHub using the way explained above. 
 
-4. Install `psycopg2` and `dj_datatbase_url` in your workspace CLI.
+4. Install `psycopg2` and `dj_database_url` in your workspace CLI.
 
 Once those steps are done, the website can be deployed in Heroku using the steps listed below:
 
@@ -956,7 +956,7 @@ pip3 freeze > requirements.txt
 
 1. Log into GitHub.
 
-2. Select the [respository](https://github.com/alisadiq91/xena_designs).
+2. Select the [repository](https://github.com/alisadiq91/xena_designs).
 
 3. Click the Code dropdown button next to the green Gitpod button.
 
