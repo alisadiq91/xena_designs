@@ -58,7 +58,9 @@
 
 2. Toasts from allauth - I had a bug where the toasts that are supposed to show when a user logs in/registers/logs out are not showing. The toast div is appearing as I could see using the inspect tool but the actual text box was not showing. Due to this bug, once a user logs in some of the toast box was covering the menu icons. The fix for this bug was to add block.super in the javascript code.
 
-3. Product Detail page - when testing the website when logged in as a regular user, when I was clicking the products it was taking me to a 500 error page. When I checked this in my gitpod, it was pointing me towards line 66 of views.py in the products app. I deleted the code to see what the issue was and then when I repasted the code the issue was fixed. I am not sure what happened in this case.
+3. Product Detail page - when testing the website when logged in as a regular user, when I was clicking the products it was taking me to a 500 error page. When I checked this in my gitpod, it was pointing me towards line 66 of views.py in the products app. I had to get tutor support to help me with this issue.
+
+4. Sizes - on the confirmation email and the checkout success page, I could not get the sizes to show using the if statement. I realised this late on when completing my testing and did not have time to fix it or speak to tutor support or my tutor.
 
 # **UX Testing**
 

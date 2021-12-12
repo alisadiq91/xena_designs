@@ -93,15 +93,7 @@
                             <div class="col-12">
                                 <input type="submit" class="btn btn-border text-uppercase my-3" value="Add to Basket">
                                 {% if request.user.is_authenticated %}
-                                    {% if product_in_wishlist %}                 
-                                        <div>
-                                            <a class="btn btn-border text-uppercase" href="{% url 'remove_from_wishlist' product.id %}">Remove from Wishlist</a>                            
-                                        </div>
-                                    {% else %}
-                                        <div>
-                                            <a class="btn btn-border text-uppercase" href="{% url 'add_to_wishlist' product.id %}">Add to Wishlist</a>                                
-                                        </div>
-                                    {% endif %}
+                                    <a class="btn btn-border text-uppercase" href="{% url 'add_to_wishlist' product.id %}">Add to Wishlist</a>                                
                                 {% else %} 
                                     <a class="btn btn-border text-uppercase" href="{% url 'account_login' %}">Add to Wishlist</a>
                                 {% endif %}

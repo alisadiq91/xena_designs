@@ -299,9 +299,13 @@ My Account dropdown list :
 
 4. Add to Basket - this button adds the item to the users basket. If the process is successful the user is met with a toast success giving them a preview of their basket.
 
-5. Add to Wishlist - this button adds the item to the users wishlist. If the user is not logged in this button takes them to the login page. Once the item is added to the wishlist, this button changes to "remove from wishlist". 
+5. Add to Wishlist - this button adds the item to the users wishlist. If the user is not logged in this button takes them to the login page.
 
 6. Keep shopping - this button takes the user back to the products page. 
+
+## Features to implement
+
+1. I wanted to add a function whereby if the user has added an item to their wishlist, on the product detail page the button changed from "add to wishlist" to "remove from wishlist"
 
 # **Login page**
 
