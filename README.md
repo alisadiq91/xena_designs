@@ -209,6 +209,8 @@ My Account dropdown list :
 
 3.  Carousel - there is a feedback carousel which using python shows the user all the reviews that have been made on the website. Each card shows the review title, comments and who it was created by. There is a link below the carousel for users to go to the review page and see all the feedback.
 
+4. Created By - at the bottom of the footer the user is shown who created the website. This is an external link to my business instagram profile.
+
 ### Homepage desktop
 
 ![homepage-desktop-video](https://github.com/alisadiq91/xena_designs/blob/main/media/README/video-dt.png)
@@ -275,13 +277,9 @@ My Account dropdown list :
 
 * Frameworks, Libraries & Programs Used - Bootstrap, [Font Awesome](https://fontawesome.com/), Django, AWS, Jquery
 
-#### Product details page desktop wireframe
+#### Product details page wireframe
 
 ![wireframe-product-details-desktop](https://github.com/alisadiq91/xena_designs/blob/main/media/README/wireframes/wf-detail-dt.jpeg)
-
-#### Product details page mobile wireframe
-
-![wireframe-product-details-mobile](https://github.com/alisadiq91/xena_designs/blob/main/media/README/wireframes/wf-detail-mb.jpeg)
 
 #### Products detail page desktop
 
@@ -297,7 +295,7 @@ My Account dropdown list :
 
 2. Size options - If the product has sizes, the user is given the option to select the size of the product they would like.
 
-3. Quantity selection - The user can choose the quantity of the item that they would like to add to their basket.
+3. Quantity selection - The user can choose the quantity of the item that they would like to add to their basket. JQuery is used to not allow the user to decrement the value below 1 and increment it above 99. 
 
 4. Add to Basket - this button adds the item to the users basket. If the process is successful the user is met with a toast success giving them a preview of their basket.
 
@@ -321,7 +319,7 @@ My Account dropdown list :
 
 ![login-fail](https://github.com/alisadiq91/xena_designs/blob/main/media/README/login-fail.png)
 
-2. Forgotten password - also provided by the allauth templates
+2. Forgotten password - also provided by the allauth templates. This sends the user a link to update their password.
 
 ![forgot-password](https://github.com/alisadiq91/xena_designs/blob/main/media/README/password-reset.png)
 
@@ -407,14 +405,14 @@ My Account dropdown list :
 
 2. The form - the form to add the product has the following fields:
 
-  1. Category - using a dropdown list
-  2. Sku
-  3. Name 
-  4. Description
-  5. Has sizes - using a dropdown list
-  6. Price
-  7. Image URL
-  8. Image Upload
+  - Category - using a dropdown list
+  - Sku
+  - Name 
+  - Description
+  - Has sizes - using a dropdown list
+  - Price
+  - Image URL
+  - Image Upload
 
   The form uses crispy forms from django. The validation of these form is all provided by this.
 
@@ -538,7 +536,7 @@ My Account dropdown list :
 
 ### Basket page mobile
 
-![basket-mobile-1](https://github.com/alisadiq91/xena_designs/blob/main/media/README/basket-mb-1.png)
+![basket-mobile-1](https://github.com/alisadiq91/xena_designs/blob/main/media/README/basket-mb-1.png) <br />
 ![basket-mobile-2](https://github.com/alisadiq91/xena_designs/blob/main/media/README/basket-mb-2.png)
 
 ## Features
@@ -601,10 +599,9 @@ My Account dropdown list :
 
 9. Checkout Success - once the order has gone through, the user is taken to a checkout success page where they are shown their order confirmation. This shows the user the details of their order and lets them know that they will receive a confirmation email also. These two are shown below :
 
- - Checkout Success:
+ 
  ![checkout-success](https://github.com/alisadiq91/xena_designs/blob/main/media/README/order-confirm-dt.png)
 
- - Order confirmation email:
  ![email-confirmation](https://github.com/alisadiq91/xena_designs/blob/main/media/README/email-confirm.png)
 
 10. Mobile responsiveness - on mobiles the basket summary is placed above the checkout form.

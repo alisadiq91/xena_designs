@@ -154,7 +154,7 @@
 
 #### Result 
 
-* Each time adds something or edits their basket, as long as there is an item in the basket they are shown a preview through a toast message box. 
+* Each time the user adds something or edits their basket, as long as there is an item in the basket they are shown a preview through a toast message box. 
 
 * In the header the user is shown the total of the items in their basket and can click this icon to be taken to their basket.
 
