@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
 
+from wishlist.models import WishList
 from .models import Product, Category
 from .forms import ProductForm
 
@@ -62,10 +63,13 @@ def product_detail(request, product_id):
     """ A view to show all products, sort products and search through them """
 
     product = get_object_or_404(Product, pk=product_id)
+    product_in_wishlist = False
     if request.user.is_authenticated:
-        product_in_wishlist = request.user.wishlist.products.filter(pk=product_id).count() > 0  # noqa: E501
-    else:
-        product_in_wishlist = False
+        try:
+            wishlist = WishList.objects.get(user=request.user)
+            product_in_wishlist == wishlist.products.filter(pk=product_id).count() > 0  # noqa: E501
+        except WishList.DoesNotExist:
+            product_in_wishlist = False
 
     context = {
         'product': product,
