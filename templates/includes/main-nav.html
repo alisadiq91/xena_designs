@@ -29,14 +29,17 @@
           <div class="dropdown">
             <button class="dropbtn nav-link">Special Occasions</button>
             <ul class="dropdown-content">
-              <li><a class="" href="{% url 'products' %}?category=Accessories">Accessories</a></li>
-              <li><a class="" href="{% url 'products' %}?category=Accessories">Accessories</a></li>
-              <li><a class="" href="{% url 'products' %}?category=Accessories">Accessories</a></li>
+              <li><a class="dropdown-text" href="{% url 'products' %}?category=Ramadan">Ramadan</a></li>
+              <li><a class="dropdown-text" href="{% url 'products' %}?category=Weddings">Weddings</a></li>
+              <li><a class="" href="{% url 'products' %}?category=Baby">Baby</a></li>
+              <li><a class="" href="{% url 'products' %}?category=Valentines">Valentines</a></li>
+              <li><a class="" href="{% url 'products' %}?category=MumDad">Mothers/Fathers Day</a></li>
+              <li><a class="" href="{% url 'products' %}?category=Christmas">Christmas</a></li>
             </ul>
           </div>
         </li>
         <li class="nav-item border-hover px-1">
-          <a class="nav-link" href="{% url 'reviews' %}"><i class="fas fa-star"> </i>&nbsp;&nbsp; Reviews &nbsp;&nbsp;<i class="fas fa-star"> </i></a>
+          <a class="nav-link" href="{% url 'reviews' %}">Reviews</a>
         </li>          
     </ul>
 </div>

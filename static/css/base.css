@@ -43,10 +43,11 @@ body {
     display: none;
     position: absolute;
     background-color: #f1f1f1;
+    font-size: smaller;
     
     
     z-index: 1;
-    list-style-type: none;
+    list-style-type: korean-hanja-informal;
   }
   
   /* Links inside the dropdown */
