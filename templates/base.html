@@ -151,6 +151,7 @@
           </nav>
       </div>
   </header>
+  
     {% if messages %}
     <div class="message-container">
       {% for message in messages %}
@@ -176,21 +177,30 @@
     {% endblock %}
 
     {% block footer %}
+    <div class="container mb-5">
+      <div class="manager-textbox">
+        <img src="{{ MEDIA_URL }}logo.PNG" alt="logo" width="70" height="70" class="manager-portrait">
+        
+      </div>       
+    </div>
 <!-- Footer from https://mdbootstrap.com/docs/b4/jquery/navigation/footer/-->
-<footer class="border-top page-footer mt-4 pt-4">
-
+<footer class="border-top page-footer">
+  
   <!-- Footer Links -->
-  <div class="container-fluid text-center text-md-left">
+  <div class="container-fluid text-center text-md-left mt-4 pt-4">
 
     <!-- Grid row -->
     <div class="row">
 
       <!-- Grid column -->
-      <div class="col-md-6 mt-md-0 mt-3">
+      <div class="col-md-4 mt-md-0 mt-3">
 
         <!-- Content -->
-        <h5 class="text-uppercase text-center font-weight-bold pb-2">About Us</h5>
-        <p class="text-center">We are a family run resin art business. We create customised products to the way you want it! </p>
+        <h5 class="text-uppercase text-center font-weight-bold pb-2">Information</h5>
+        <ul class="list-unstyled text-center">
+          <li><a class="hover-bottom small " href="about.html">About Us</a></li>
+          <li><a class="hover-bottom small " href="privacy.html">Privacy Policy</a></li>
+        </ul>
 
       </div>
       <!-- Grid column -->
@@ -198,29 +208,32 @@
       <hr class="clearfix w-100 d-md-none pb-3">
 
       <!-- Grid column -->
-      <div class="col-md-3 mb-md-0 mb-3">
+      <div class="col-md-4 mb-md-0 mb-3">
 
         <!-- Links -->
-        <h5 class="text-uppercase text-center font-weight-bold pb-2">Contact Us</h5>
+        <h5 class="text-uppercase text-center font-weight-bold pb-2">Customer Care</h5>
 
         <ul class="list-unstyled text-center">
+          
+              <li><a class="hover-bottom small" href="contact.html">Contact Us</a></li>
+          <li><a class="hover-bottom small" href="faqs.html">FAQs</a></li>
           <li>
-            <a class="hover-bottom" href="mailto:xenadesigns1@gmail.com">xenadesigns1@gmail.com</a>
-          </li>
+            <a class="hover-bottom small" href="mailto:xenadesigns1@gmail.com">xenadesigns1@gmail.com</a>
+            <li>
         </ul>
 
       </div>
       <!-- Grid column -->
-
+      <hr class="clearfix w-100 d-md-none pb-3">
       <!-- Grid column -->
-      <div class="col-md-3 mb-md-0 mb-3">
+      <div class="col-md-4 mb-md-0 mb-3">
 
         <!-- Links -->
         <h5 class="text-uppercase text-center font-weight-bold pb-2">Socials</h5>
 
         <ul class="list-unstyled text-center">
           <li class="list-inline-item">
-            <a class="hover-bottom" href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a class="hover-bottom" href="https://www.pinterest.co.uk/" target="_blank"><i class="fab fa-pinterest"></i></a>
           </li>
           <li class="list-inline-item">
             <a class="hover-bottom" href="https://www.instagram.com/xena__designs/" target="_blank"><i class="fab fa-instagram"></i></a>

@@ -25,6 +25,33 @@ body {
 	z-index: -1;
 }
 
+.nav-size {
+    font-size: smaller;
+}
+
+
+
+/*managers */
+
+
+.manager-textbox {
+    background-color: #f4f6f9;
+    box-shadow: 0 -3px 0 0 #303f9f;
+    position: relative;
+    margin-top: 60px;
+}
+
+#manager  .teaser-header-what {
+    padding-left: 0px;
+}
+.manager-portrait {
+ position: absolute;
+ top: -40px;
+ left: 50%;
+ -webkit- transform: translateX(-50%);
+ transform: translateX(-50%);
+}
+
 /* Dropdown Button */
 .dropbtn {
     
